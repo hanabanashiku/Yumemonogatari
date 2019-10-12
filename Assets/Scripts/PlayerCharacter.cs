@@ -5,15 +5,11 @@ public class PlayerCharacter : Character {
 
     private Vector2 _direction = Vector2.up;
     private Sprite[] _sprites;
-    private static readonly int Left = Animator.StringToHash("Left");
-    private static readonly int Right = Animator.StringToHash("Right");
-    private static readonly int Forward = Animator.StringToHash("Forward");
-    private static readonly int Backwards = Animator.StringToHash("Backwards");
-    private static readonly int Stop = Animator.StringToHash("Stop");
+    private static readonly int Direction = Animator.StringToHash("Direction");
+    private static readonly int Speed = Animator.StringToHash("Speed");
 
     protected override void Start() {
         base.Start();
-        _sprites = Resources.LoadAll<Sprite>("MainCharacter");
         Animator.enabled = false;
     }
     
@@ -23,6 +19,8 @@ public class PlayerCharacter : Character {
         var v = Input.GetAxis("Vertical");
 
         var d = GetDirection(h, v);
+        var speed = Input.GetButton("Sprint") ? RunSpeed : WalkSpeed;
+
 
         // changing direction
         // todo: start animation, change sprite
@@ -30,34 +28,29 @@ public class PlayerCharacter : Character {
 
             if(d == Vector2.left) {
                 Animator.enabled = true;
-                Animator.SetTrigger(Left);
+                Animator.SetInteger(Direction, 2);
+                Animator.SetFloat(Speed, speed);
             }
             else if(d == Vector2.right) {
                 Animator.enabled = true;
-                Animator.SetTrigger(Right);
+                Animator.SetInteger(Direction, 0);
+                Animator.SetFloat(Speed, speed);
                 
             }
             else if(d == Vector2.up) {
                 Animator.enabled = true;
-                Animator.SetTrigger(Forward);
+                Animator.SetInteger(Direction, 1);
+                Animator.SetFloat(Speed, speed);
             }
 
             else if(d == Vector2.down) {
                 Animator.enabled = true;
-                Animator.SetTrigger(Backwards);
+                Animator.SetInteger(Direction, 3);
+                Animator.SetFloat(Speed, speed);
             }
             else if (d == Vector2.zero) {
-                Animator.SetTrigger(Stop);
+                Animator.SetFloat(Speed, 0);
                 Animator.enabled = false;
-                // what was the last direction?
-                if(_direction == Vector2.left)
-                    Sprite.sprite = _sprites[8];
-                else if(_direction == Vector2.right)
-                    Sprite.sprite = _sprites[11];
-                else if(_direction == Vector2.up)
-                    Sprite.sprite = _sprites[2];
-                else if(_direction == Vector2.down)
-                    Sprite.sprite = _sprites[5];
             }
             else {
                 Debug.Log($"Unexpected {d}!");
@@ -65,7 +58,6 @@ public class PlayerCharacter : Character {
             _direction = d;
         }
 
-        var speed = Input.GetButton("Sprint") ? RunSpeed : WalkSpeed;
         pos += speed * d * Time.deltaTime;
         transform.position = pos;
     }
