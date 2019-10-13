@@ -7,11 +7,6 @@ public class PlayerCharacter : Character {
     private Sprite[] _sprites;
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
-
-    protected override void Start() {
-        base.Start();
-        Animator.enabled = false;
-    }
     
     void Update() {
         Vector2 pos = transform.position;
@@ -23,34 +18,27 @@ public class PlayerCharacter : Character {
 
 
         // changing direction
-        // todo: start animation, change sprite
         if(d != _direction) {
 
             if(d == Vector2.left) {
-                Animator.enabled = true;
                 Animator.SetInteger(Direction, 2);
-                Animator.SetFloat(Speed, speed);
+                Animator.SetFloat(Speed, speed); // rewrite so that these things don't happen in the same frame.
             }
             else if(d == Vector2.right) {
-                Animator.enabled = true;
                 Animator.SetInteger(Direction, 0);
-                Animator.SetFloat(Speed, speed);
-                
+                Animator.SetFloat(Speed, speed);                
             }
             else if(d == Vector2.up) {
-                Animator.enabled = true;
                 Animator.SetInteger(Direction, 1);
                 Animator.SetFloat(Speed, speed);
             }
 
             else if(d == Vector2.down) {
-                Animator.enabled = true;
                 Animator.SetInteger(Direction, 3);
                 Animator.SetFloat(Speed, speed);
             }
             else if (d == Vector2.zero) {
                 Animator.SetFloat(Speed, 0);
-                Animator.enabled = false;
             }
             else {
                 Debug.Log($"Unexpected {d}!");
