@@ -8,8 +8,7 @@ public class PlayerCharacter : Character {
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
     
-    void Update() {
-        Vector2 pos = transform.position;
+    void FixedUpdate() {
         var h = Input.GetAxis("Horizontal");
         var v = Input.GetAxis("Vertical");
 
@@ -46,8 +45,7 @@ public class PlayerCharacter : Character {
             _direction = d;
         }
 
-        pos += speed * d * Time.deltaTime;
-        transform.position = pos;
+        Body.velocity = d * speed;
     }
     
     // Get the current direction based on input axis

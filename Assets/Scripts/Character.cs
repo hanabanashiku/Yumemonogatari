@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class Character : MonoBehaviour {
 
     protected Animator Animator;
-    protected SpriteRenderer Sprite;
+    protected Rigidbody2D Body;
 
     /// <summary>
     /// The character's current health.
@@ -29,12 +29,12 @@ public class Character : MonoBehaviour {
     /// </summary>
     public int shield;
 
-    protected const float WalkSpeed = 3.0f;
-    protected const float RunSpeed = 8.0f;
+    protected const float WalkSpeed = 5.0f;
+    protected const float RunSpeed = 9.0f;
 
     protected virtual void Start() {
         Animator = gameObject.GetComponent<Animator>();
-        Sprite = gameObject.GetComponent<SpriteRenderer>();
+        Body = gameObject.GetComponent<Rigidbody2D>();
     }
 
 }
