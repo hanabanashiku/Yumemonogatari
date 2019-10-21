@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 public class Character : MonoBehaviour {
 
     protected Animator Animator;
     protected Rigidbody2D Body;
 
+    /// <summary>
+    /// The name of the character.
+    /// </summary>
+    public string name;
+
+    /// <summary>
+    /// The backend identifier of the character.
+    /// </summary>
+    public string charId;
     /// <summary>
     /// The character's current health.
     /// </summary>
