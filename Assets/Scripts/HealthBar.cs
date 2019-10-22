@@ -6,11 +6,11 @@ public class HealthBar : MonoBehaviour {
     public Character character;
     private Slider _slider;
 
-    void Awake() {
+    private void Awake() {
         _slider = gameObject.GetComponentInChildren<Slider>();
     }
 
-    void Update() {
+    private void Update() {
        _slider.value = (float)character.health / character.maxHealth;
     }
 }

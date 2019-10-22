@@ -1,18 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class Consumable : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+/// <summary>
+/// An item that restores health or shield to the consumer.
+/// </summary>
+public class Consumable : Item {
+    
+    /// <summary>
+    /// The amount of health to restore.
+    /// </summary>
+    public int Health { get; }
+    
+    /// <summary>
+    /// The amount of shield to restore.
+    /// </summary>
+    public int Shield { get; }
+
+    /// <summary>
+    /// Perform the effects of the item on the target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    public void Consume(Character target) {
+        target.shield = Math.Min(target.shield + Shield, target.MaxShield);
+        target.health = Math.Min(target.health + Health, target.maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Consumable(string id, string name, string desc, Sprite sprite, int cost, int health, int shield) 
+        : base(id, name, desc, sprite, cost) {
+        Health = health;
+        Shield = shield;
     }
 }

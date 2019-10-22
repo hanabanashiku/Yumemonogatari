@@ -7,8 +7,15 @@ public class PlayerCharacter : Character {
     private Sprite[] _sprites;
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
-    
-    void FixedUpdate() {
+
+    protected override void Start() {
+        base.Start();
+        inventory = gameObject.AddComponent<Inventory>();
+        identifier = "player";
+        characterName = "Chousuke";
+    }
+
+    private void FixedUpdate() {
         var h = Input.GetAxis("Horizontal");
         var v = Input.GetAxis("Vertical");
 
@@ -49,12 +56,16 @@ public class PlayerCharacter : Character {
     }
     
     // Get the current direction based on input axis
-    protected Vector2 GetDirection(float h, float v) {
+    private Vector2 GetDirection(float h, float v) {
         if(Mathf.Abs(h) < 0.05f && Mathf.Abs(v) < 0.05f)
             return Vector2.zero;
         if(Mathf.Abs(h) > Mathf.Abs(v)) 
             return new Vector2(Mathf.Sign(h), 0);
        
         return new Vector2(0, Mathf.Sign(v));
+    }
+
+    public override void OnDeath() {
+        throw new NotImplementedException();
     }
 }
