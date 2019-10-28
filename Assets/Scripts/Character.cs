@@ -45,7 +45,7 @@ public abstract class Character : MonoBehaviour {
     protected const float WalkSpeed = 5.0f;
     protected const float RunSpeed = 9.0f;
 
-    protected virtual void Start() {
+    protected virtual void Awake() {
         Animator = gameObject.GetComponent<Animator>();
         Body = gameObject.GetComponent<Rigidbody2D>();
     }

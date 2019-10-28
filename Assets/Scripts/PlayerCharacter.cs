@@ -8,8 +8,8 @@ public class PlayerCharacter : Character {
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int Speed = Animator.StringToHash("Speed");
 
-    protected override void Start() {
-        base.Start();
+    protected override void Awake() {
+        base.Awake();
         inventory = gameObject.AddComponent<Inventory>();
         identifier = "player";
         characterName = "Chousuke";
