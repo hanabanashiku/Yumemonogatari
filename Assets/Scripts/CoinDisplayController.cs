@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Yumemonogatari.Equipment;
 
 public class CoinDisplayController : MonoBehaviour {
     private Inventory _inventory;

@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using Yumemonogatari.Data;
+using Yumemonogatari.Equipment;
 
 public class PlayerCharacter : Character {
 
@@ -13,6 +15,9 @@ public class PlayerCharacter : Character {
         inventory = gameObject.AddComponent<Inventory>();
         identifier = "player";
         characterName = "Chousuke";
+        using(var repo = new Repository()) {
+            
+        }
     }
 
     private void FixedUpdate() {

@@ -1,3 +1,5 @@
+using Yumemonogatari.Equipment;
+
 /// <summary>
 /// An NPC not involved in combat.
 /// </summary>

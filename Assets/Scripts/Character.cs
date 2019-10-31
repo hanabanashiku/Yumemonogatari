@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using Yumemonogatari.Equipment;
 
 public abstract class Character : MonoBehaviour {
 

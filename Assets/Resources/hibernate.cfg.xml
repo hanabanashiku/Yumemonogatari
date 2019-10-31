@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2"
+                   assembly = "Assembly-CSharp" namespace = "Yumemonogatari.Equipment">
+    <class name="Item" table="Items">
+        <id name="Identifier" type="String">
+            <generator class="uuid.hex" />
+        </id>
+        <property name="Name" type="String" />
+        <property name="Description" type="String" />
+        <property name="Price" type="Int64" />
+        <joined-subclass name="Ammunition" table="Ammunition">
+            <key column="Identifier" />
+            <property name="Type" type="Ammunition.AmmoTypes" />
+            <property name="Amount" type="Int64" />
+        </joined-subclass>
+        <joined-subclass name="Armor" table="Armor">
+            <key column="Identifier" />
+            <property name="Shield" type="Int64" />
+            <property name="RechargeDelay" type="Single" />
+            <property name="RechargeSpeed" type="Int64" />
+        </joined-subclass>
+        <joined-subclass name="Consumable" table="Consumables">
+            <key column="Identifier" />
+            <property name="Health" type="Int64" />
+            <property name="Shield" type="Int64" />
+        </joined-subclass>
+        <joined-subclass name="Weapon" table="Weapons">
+            <key column="Identifier" />
+            <property name="Damage" type="Int64" />
+            <property name="Range" type="Single" />
+            <property name="Time" type="Single" />
+            <joined-subclass name="MeleeWeapon" table="MeleeWeapons">
+                <key column="Identifier" />
+                <property name="Type" type="MeleeWeapon.MeleeTypes" />
+            </joined-subclass>
+            <joined-subclass name="RangedWeapon" table="RangedWeapons">
+                <key column="Identifier" />
+                <property name="Type" type="RangedWeapon.RangedTypes" />
+                <property name="AmmoPerRound" type="Int64" />
+                <property name="ReloadSpeed" type="Single" />
+            </joined-subclass>
+        </joined-subclass>
+    </class>
+    
+</hibernate-mapping>
