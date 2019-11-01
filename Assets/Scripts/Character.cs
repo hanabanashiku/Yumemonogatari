@@ -35,7 +35,7 @@ public abstract class Character : MonoBehaviour {
     /// <summary>
     /// The maximum amount of shield provided by armor.
     /// </summary>
-    public int MaxShield => (inventory.EquippedArmor != null) ? inventory.EquippedArmor.Shield : 0;
+    public int MaxShield => (inventory.EquippedArmor != null) ? inventory.EquippedArmor.shield : 0;
 
     /// <summary>
     /// The current amount of shield left.
@@ -76,15 +76,15 @@ public abstract class Character : MonoBehaviour {
 
     protected IEnumerator RechargeShield() {
         var armor = inventory.EquippedArmor;
-        if(armor is null || armor.Shield == shield)
+        if(armor is null || armor.shield == shield)
             yield break;
         
-        yield return new WaitForSeconds(armor.RechargeDelay);
+        yield return new WaitForSeconds(armor.rechargeDelay);
 
         // recharge the shield six times a second until full.
-        var inc = armor.RechargeSpeed / 6;
-        while(shield < armor.Shield) {
-            shield = Math.Min(shield + inc, armor.Shield);
+        var inc = armor.rechargeSpeed / 6;
+        while(shield < armor.shield) {
+            shield = Math.Min(shield + inc, armor.shield);
             yield return new WaitForSeconds(1/6f);
         }
 

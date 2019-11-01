@@ -1,31 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// An armor to be worn by a character.
 /// </summary>
+[Serializable]
+[CreateAssetMenu(menuName = "Items/Armor", fileName="Armor.asset")]
 public class Armor : Item {
-    
+
     /// <summary>
     /// The amount of armor provided, in HP.
     /// </summary>
-    public int Shield { get; }
-    
+    public int shield;
+
     /// <summary>
     /// The amount of time it takes for the armor to begin recharging
     /// </summary>
-    public float RechargeDelay { get; }
-    
+    public float rechargeDelay;
+
     /// <summary>
     /// The amount to restore to the player's armor in HP/sec.
     /// </summary>
-    public int RechargeSpeed { get; }
-
-    public Armor(string id, string name, string desc, Sprite sprite, int cost, int shield, float rechargeDelay, 
-        int rechargeSpeed) : 
-        base(id, name, desc, sprite, cost) {
-        
-        Shield = shield;
-        RechargeDelay = rechargeDelay;
-        RechargeSpeed = rechargeSpeed;
-    }
+    public int rechargeSpeed;
 }

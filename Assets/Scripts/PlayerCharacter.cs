@@ -54,6 +54,19 @@ public class PlayerCharacter : Character {
 
         Body.velocity = d * speed;
     }
+
+    /// <summary>
+    /// Fire a ranged weapon.
+    /// </summary>
+    public void Fire() {
+        if(inventory.EquippedRangedWeapon == null)
+            return;
+        if(inventory.remainingAmmo == 0)
+            return;
+
+        inventory.remainingAmmo--;
+        throw new NotImplementedException();
+    }
     
     // Get the current direction based on input axis
     private Vector2 GetDirection(float h, float v) {
@@ -64,6 +77,7 @@ public class PlayerCharacter : Character {
        
         return new Vector2(0, Mathf.Sign(v));
     }
+    
 
     public override void OnDeath() {
         throw new NotImplementedException();

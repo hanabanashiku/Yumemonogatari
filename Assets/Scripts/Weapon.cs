@@ -1,26 +1,19 @@
 ﻿using UnityEngine;
 
 public class Weapon : Item {
-    
+
     /// <summary>
     /// The damage done on a normal hit.
     /// </summary>
-    public int Damage { get; }
-    
+    public int damage;
+
     /// <summary>
     /// The range of the weapon.
     /// </summary>
-    public float Range { get; }
-    
+    public float range;
+
     /// <summary>
     /// The time between successive hits.
     /// </summary>
-    public float Time { get; }
-
-    public Weapon(string id, string name, string desc, Sprite sprite, int cost, int damage, float range, float time) 
-        : base(id, name, desc, sprite, cost) {
-        Damage = damage;
-        Range = range;
-        Time = time;
-    }
+    public float time;
 }

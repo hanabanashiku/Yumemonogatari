@@ -4,30 +4,26 @@ using UnityEngine;
 /// <summary>
 /// An item that restores health or shield to the consumer.
 /// </summary>
+[Serializable]
+[CreateAssetMenu(menuName = "Items/Consumables", fileName = "Consumables.asset")]
 public class Consumable : Item {
-    
+
     /// <summary>
     /// The amount of health to restore.
     /// </summary>
-    public int Health { get; }
-    
+    public int health;
+
     /// <summary>
     /// The amount of shield to restore.
     /// </summary>
-    public int Shield { get; }
+    public int shield;
 
     /// <summary>
     /// Perform the effects of the item on the target.
     /// </summary>
     /// <param name="target">The target.</param>
     public void Consume(Character target) {
-        target.shield = Math.Min(target.shield + Shield, target.MaxShield);
-        target.health = Math.Min(target.health + Health, target.maxHealth);
-    }
-
-    public Consumable(string id, string name, string desc, Sprite sprite, int cost, int health, int shield) 
-        : base(id, name, desc, sprite, cost) {
-        Health = health;
-        Shield = shield;
+        target.shield = Math.Min(target.shield + shield, target.MaxShield);
+        target.health = Math.Min(target.health + health, target.maxHealth);
     }
 }

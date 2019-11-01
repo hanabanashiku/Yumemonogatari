@@ -1,43 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Represents an inventory item
 /// </summary>
-public class Item : MonoBehaviour {
-    
+public class Item : ScriptableObject {
+
     /// <summary>
     /// The internal identifier of the item.
     /// </summary>
-    public string Identifier { get; }
-    
+    public string identifier;
+
     /// <summary>
     /// The name of the item
     /// </summary>
-    public string Name { get; }
+    public new string name;
 
     /// <summary>
     /// A description of the item.
     /// </summary>
-    public string Description { get; }
+    public string description;
 
     /// <summary>
     /// The item's image.
     /// </summary>
-    public Sprite Sprite { get; }
-    
+    public Sprite sprite;
+
     /// <summary>
     /// The cost of the item, in mon.
     /// </summary>
-    public int Price { get; }
+    public int price;
 
-    public Item(string id, string name, string desc, Sprite sprite, int cost) {
-        Identifier = id;
-        Name = name;
-        Description = desc;
-        Sprite = sprite;
-        Price = cost;
-    }
 }
