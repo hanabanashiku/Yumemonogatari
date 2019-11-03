@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
   m_Name: wakizashi
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: wakizashi
+  name: Wakizashi
+  description: This single-edged sword is a companion sword to the katana and is about
+    half the length. It is used as an auxilary sword and for close-combat fighting.
+    It is traditional for a samurai to pair this sword with a katana. Called daisho,
+    this pairing represents one's honor and social sway.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
+  price: 1100
+  damage: 25
   range: 0
-  time: 0
+  time: 0.5
   type: 0

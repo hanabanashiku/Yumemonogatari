@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
-  m_Name: RangedWeapons
+  m_Name: hankyu
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: hankyu
+  name: Hankyu
+  description: A traditional bamboo bow with a hempen bowstring. This bow is short
+    and light, sacrificing range for mobility. It shares a similar asymetrical shape
+    with the Daikyu, but stands at about half the size. It sees heavy use among students
+    of kyudo.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
+  price: 800
+  damage: 20
+  range: 15
   time: 0
-  type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  type: 1
+  ammoPerRound: 1
+  reloadSpeed: 0.75

@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
-  m_Name: MeleeWeapons 1
+  m_Name: tanto
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: tanto
+  name: Tanto
+  description: A straight-edged knife. Tanto can be single or double edged, and are
+    fairly long, at one shaku in length. Similar to the way the wakizashi pairs with
+    the katana, this blade is often paired with the tachi. The tanto has become less
+    common, as there are a limited amount of people that still forge them. Newly forged
+    tanto are often made in the style of Muromachi or Kamakura-era blades.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
+  price: 900
+  damage: 15
   range: 0
-  time: 0
+  time: 0.4
   type: 0

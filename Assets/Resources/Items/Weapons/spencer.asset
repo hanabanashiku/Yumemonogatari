@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
   m_Name: spencer
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: spemcer
+  name: Spencer 1865 Carbine
+  description: 'An American-made lever-action rifle, this carbine is one of the world''s
+    first repeating rifles. It uses copper catridges, loaded in seven-round magazines. '
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
-  time: 0
+  price: 3100
+  damage: 45
+  range: 450
+  time: 0.3
   type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  ammoPerRound: 7
+  reloadSpeed: 2

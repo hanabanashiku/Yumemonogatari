@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
-  m_Name: MeleeWeapons
+  m_Name: nodachi
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: nodachi
+  name: Nodachi
+  description: The nodachi is a longsword. The blade is about three shaku long, longer
+    than a katana, but not as long as a naginata. It is too long to be carried through
+    the obi, so it is worn on the back rather than at the waist. Due to a shogunal
+    law enacted in the 17th century mandating a maximum sword length, nodachi have
+    become increasingly rare as of late, and as such, they are most often used for
+    ceremonial purposes rather than for actual combat.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
+  price: 3400
+  damage: 65
   range: 0
-  time: 0
-  type: 0
+  time: 2
+  type: 1

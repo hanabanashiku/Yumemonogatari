@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
-  m_Name: dreyse
+  m_Name: dreyse41
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: dreyse41
+  name: Dreyse Model 41
+  description: "A breechloading, bolt-action gun originally developed by the German
+    gunsmith von Dreyse for use by Prussian infantry. The gun is called Z\xFCndnadelgewehr
+    in German, named for its unique needle-like firing pin. The gun used a paper catridge
+    which allowed it to be loaded much more easily than a typical matchlock gun."
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
+  price: 1500
+  damage: 40
+  range: 200
   time: 0
   type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  ammoPerRound: 1
+  reloadSpeed: 2

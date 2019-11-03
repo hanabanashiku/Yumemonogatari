@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
-  m_Name: RangedWeapons 1
+  m_Name: daikyu
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: daikyu
+  name: Daikyu
+  description: A traditional bamboo bow with a hempen bowstring. This bow is asymetrical,
+    being longer above the grip than below it. Nearly two meters in length, it was
+    once used for yabusame-style mounted archery.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
+  price: 1100
+  damage: 30
+  range: 200
   time: 0
-  type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  type: 1
+  ammoPerRound: 1
+  reloadSpeed: 1.2

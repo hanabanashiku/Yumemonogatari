@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
   m_Name: konaginata
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: konaginata
+  name: Ko-Naginata
+  description: The Naginata is a polearm consisting of a wooden shaft with a blade
+    attached to the end. This model is specifically designed for women fighters, having
+    a slightly shorter blade than the Ou-Naginata, its male counterpart.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
+  price: 1150
+  damage: 40
   range: 0
-  time: 0
-  type: 0
+  time: 1.5
+  type: 1

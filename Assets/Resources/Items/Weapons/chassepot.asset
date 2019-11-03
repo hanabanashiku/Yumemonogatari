@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
   m_Name: chassepot
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: chassepot
+  name: "Fusil mod\xE8le 1866"
+  description: "Colloquially known as the Chassepot, this gun is a bolt-action, breech-loading
+    rifle of French design. After its inception, it quickly replaced the Mini\xE9
+    in France, though adoption has been slower in Japan due to a limited number of
+    units making it ashore. The gun's paper catridges hold more gunpowder than the
+    Dreyse catridges, allowing it to achieve a much larger maximum range."
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
+  price: 2300
+  damage: 50
+  range: 800
   time: 0
   type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  ammoPerRound: 1
+  reloadSpeed: 0.7

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2de819e1b4b42f78650840f4b3fd9ee, type: 3}
-  m_Name: Ammunition
+  m_Name: arrow5
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: arrow5
+  name: Arrows x5
+  description: A pack of bamboo arrow swith iron tips. The shafts are about a meter
+    long.
   sprite: {fileID: 0}
-  price: 0
+  price: 50
   type: 0
-  amount: 0
+  amount: 5

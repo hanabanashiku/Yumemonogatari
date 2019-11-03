@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de819e1b4b42f78650840f4b3fd9ee, type: 3}
   m_Name: bullet3
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: bullet3
+  name: Bullets x3
+  description: A pack of bullets to be loaded into a riffle. Usually about 14mm in
+    diameter and made of lead.
   sprite: {fileID: 0}
-  price: 0
-  type: 0
-  amount: 0
+  price: 45
+  type: 1
+  amount: 3

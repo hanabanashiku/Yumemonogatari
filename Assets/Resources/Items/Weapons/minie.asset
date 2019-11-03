@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
   m_Name: minie
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: minie
+  name: "Mini\xE9"
+  description: A modern muket rifle imported by French traders. It uses a special
+    bullet designed to allow for rapid muzzle loading, increasing the firing rate
+    compared to older guns. The firing mechanism puts a spin on the bullet, drastically
+    increasing its range.
   sprite: {fileID: 0}
-  price: 0
-  damage: 0
-  range: 0
+  price: 1400
+  damage: 60
+  range: 500
   time: 0
   type: 0
-  ammoPerRound: 0
-  reloadSpeed: 0
+  ammoPerRound: 1
+  reloadSpeed: 2.2
