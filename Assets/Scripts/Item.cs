@@ -18,6 +18,7 @@ public class Item : ScriptableObject {
     /// <summary>
     /// A description of the item.
     /// </summary>
+    [TextArea(10,15)]
     public string description;
 
     /// <summary>
