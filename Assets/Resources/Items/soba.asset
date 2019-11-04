@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
   m_Name: soba
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: soba
+  name: Soba
+  description: A bowl of thin noodles made of buckwheat. It's been served cold with
+    a dipping sauce.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 10
+  health: 50
+  shield: 10

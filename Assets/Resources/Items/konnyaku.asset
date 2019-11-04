@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
   m_Name: konnyaku
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: konnyaku
+  name: Konnyaku
+  description: 'A gelatinous cake made from the corm of a konjac plant. It doesn''t
+    have much taste on its own. '
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 5
+  health: 10
+  shield: 35

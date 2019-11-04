@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
-  m_Name: Consumables
+  m_Name: aburage
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: aburage
+  name: Aburage
+  description: Deep-fried tofu. The act of frying tofu causes it to puff outward.
+    It can be eaten as is, or cut into a poch to stuff with other food items such
+    as natto.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
+  price: 6
+  health: 50
   shield: 0

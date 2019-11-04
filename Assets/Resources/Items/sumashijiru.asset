@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
   m_Name: sumashijiru
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: sumashijiru
+  name: Sumashijiru
+  description: A clear soup made with dashi. It's been topped off with fresh kombu.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
+  price: 3
+  health: 20
   shield: 0

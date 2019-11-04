@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Smith & Wesson Model 1
   description: An American-made revolver. This gun uses a metal rimfire cartridge.
     It reached Japan via Scottish traders. This particular gun is a second issue.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 55b439e7287d3454a96a92e317826ddb, type: 3}
   price: 2900
   damage: 25
   range: 200

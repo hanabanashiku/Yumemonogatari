@@ -15,7 +15,7 @@ MonoBehaviour:
   identifier: arrow
   name: Arrow
   description: A bamboo arrow with an iron tip. The shaft is about a meter long.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 65e6fcea8f2f04efb824f3391a161f8f, type: 3}
   price: 10
   type: 0
   amount: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Arrows x10
   description: A pack of bamboo arrow swith iron tips. The shafts are about a meter
     long.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 65e6fcea8f2f04efb824f3391a161f8f, type: 3}
   price: 100
   type: 0
   amount: 10

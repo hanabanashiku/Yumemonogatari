@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
-  m_Name: Consumables
+  m_Name: takuan
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: takuan
+  name: Takuan
+  description: Pickled daikon made from a rice bran brine. Like other tsukemono dishes,
+    takuan serves as a good side dish.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 6
+  health: 10
+  shield: 60

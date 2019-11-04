@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
   m_Name: sake
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: sake
+  name: "Sak\xE9"
+  description: A traditional wine brewed from rice. It's a drink of choice for peasants
+    and samurai alike.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 12
+  health: 10
+  shield: 60

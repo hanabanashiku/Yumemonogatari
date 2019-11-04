@@ -19,7 +19,7 @@ MonoBehaviour:
     in France, though adoption has been slower in Japan due to a limited number of
     units making it ashore. The gun's paper catridges hold more gunpowder than the
     Dreyse catridges, allowing it to achieve a much larger maximum range."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a85a99266275142a3bb0a5b8c72d0a28, type: 3}
   price: 2300
   damage: 50
   range: 800

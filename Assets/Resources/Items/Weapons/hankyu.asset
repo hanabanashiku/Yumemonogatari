@@ -18,7 +18,7 @@ MonoBehaviour:
     and light, sacrificing range for mobility. It shares a similar asymetrical shape
     with the Daikyu, but stands at about half the size. It sees heavy use among students
     of kyudo.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fa0b30ea1f7c746f1bef086683f736aa, type: 3}
   price: 800
   damage: 20
   range: 15

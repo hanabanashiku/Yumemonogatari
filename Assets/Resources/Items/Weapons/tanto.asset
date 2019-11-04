@@ -19,7 +19,7 @@ MonoBehaviour:
     the katana, this blade is often paired with the tachi. The tanto has become less
     common, as there are a limited amount of people that still forge them. Newly forged
     tanto are often made in the style of Muromachi or Kamakura-era blades.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f5500e5cb143141759efcc0f0d96076f, type: 3}
   price: 900
   damage: 15
   range: 0

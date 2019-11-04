@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
   m_Name: gobou
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: gobou
+  name: Gobou
+  description: 'The taproot of a burdock plant that has been fried in oil. It haa
+    slightly sweet taste to it. '
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 5
+  health: 20
+  shield: 30

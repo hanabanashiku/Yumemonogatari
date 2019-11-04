@@ -18,7 +18,7 @@ MonoBehaviour:
     half the length. It is used as an auxilary sword and for close-combat fighting.
     It is traditional for a samurai to pair this sword with a katana. Called daisho,
     this pairing represents one's honor and social sway.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 8eb175ac505254949a5628791f7742f0, type: 3}
   price: 1100
   damage: 25
   range: 0

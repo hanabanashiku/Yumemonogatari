@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Spencer 1865 Carbine
   description: 'An American-made lever-action rifle, this carbine is one of the world''s
     first repeating rifles. It uses copper catridges, loaded in seven-round magazines. '
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a85a99266275142a3bb0a5b8c72d0a28, type: 3}
   price: 3100
   damage: 45
   range: 450

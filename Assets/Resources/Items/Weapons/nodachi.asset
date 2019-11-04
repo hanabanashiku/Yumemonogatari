@@ -20,7 +20,7 @@ MonoBehaviour:
     law enacted in the 17th century mandating a maximum sword length, nodachi have
     become increasingly rare as of late, and as such, they are most often used for
     ceremonial purposes rather than for actual combat.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a10212025256f489cb2fdf9f31a3b444, type: 3}
   price: 3400
   damage: 65
   range: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A two-handed sword featuring a curved, single-edge blade. It is traditional
     for a samurai to pair this sword with a smaller wakizashi. Called daisho, this
     pairing represents one's honor and social sway.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 368333644e1564d678f97475ecabe3ea, type: 3}
   price: 1500
   damage: 35
   range: 0

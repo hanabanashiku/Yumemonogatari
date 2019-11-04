@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Dreyse Model 62
   description: 'An upgraded version of the Dreyse Model 41. These guns were comissioned
     by the Shogunate from France. The handle is marked with an imperial stamp. '
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0f263827463a94e98aff248aeddbdba3, type: 3}
   price: 1650
   damage: 45
   range: 300

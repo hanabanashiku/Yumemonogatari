@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
-  m_Name: Consumables
+  m_Name: miso
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: miso
+  name: Miso Soup
+  description: A hot soup made of a dashi fish broth and softened miso paste. The
+    taste reminds you of home.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
+  price: 8
+  health: 40
   shield: 0

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
-  m_Name: Consumables
+  m_Name: natto
   m_EditorClassIdentifier: 
-  identifier: 
-  name: 
-  description: 
+  identifier: natto
+  name: Natto
+  description: A hot bowl of fermented soybeans, part of a nutritious breakfast. It's
+    slimy and has an awfully pungent smell.
   sprite: {fileID: 0}
-  price: 0
-  health: 0
-  shield: 0
+  price: 7
+  health: 45
+  shield: 15

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A breech-loading riffle of American design. The gun was adopted by
     the British in 1866. It used a metal cartridge that is able to be reloaded more
     quickly than similar French weapons.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0f263827463a94e98aff248aeddbdba3, type: 3}
   price: 1600
   damage: 35
   range: 550

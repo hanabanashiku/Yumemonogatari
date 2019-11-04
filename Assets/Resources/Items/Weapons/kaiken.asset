@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A plainly decorated dagger. The kaiken has fallen out of common use
     among samurai in favor of the wakizashi. They are instead commonly carried by
     women, tucked away in the obi for the purpose of self-defense.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f5500e5cb143141759efcc0f0d96076f, type: 3}
   price: 850
   damage: 10
   range: 0

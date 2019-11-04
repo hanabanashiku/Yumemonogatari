@@ -18,7 +18,7 @@ MonoBehaviour:
     bullet designed to allow for rapid muzzle loading, increasing the firing rate
     compared to older guns. The firing mechanism puts a spin on the bullet, drastically
     increasing its range.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a85a99266275142a3bb0a5b8c72d0a28, type: 3}
   price: 1400
   damage: 60
   range: 500

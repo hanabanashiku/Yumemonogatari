@@ -17,7 +17,7 @@ MonoBehaviour:
   description: The Naginata is a polearm consisting of a wooden shaft with a blade
     attached to the end. The blade is similar to other Japanese blades and is about
     the size of a wakizashi.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 09ffa2216a0934633b924acd005173bd, type: 3}
   price: 1150
   damage: 45
   range: 0

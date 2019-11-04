@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A traditional bamboo bow with a hempen bowstring. This bow is asymetrical,
     being longer above the grip than below it. Nearly two meters in length, it was
     once used for yabusame-style mounted archery.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fa0b30ea1f7c746f1bef086683f736aa, type: 3}
   price: 1100
   damage: 30
   range: 200

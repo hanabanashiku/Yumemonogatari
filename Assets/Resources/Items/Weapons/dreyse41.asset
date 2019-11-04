@@ -18,7 +18,7 @@ MonoBehaviour:
     gunsmith von Dreyse for use by Prussian infantry. The gun is called Z\xFCndnadelgewehr
     in German, named for its unique needle-like firing pin. The gun used a paper catridge
     which allowed it to be loaded much more easily than a typical matchlock gun."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0f263827463a94e98aff248aeddbdba3, type: 3}
   price: 1500
   damage: 40
   range: 200
