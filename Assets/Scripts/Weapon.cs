@@ -2,6 +2,8 @@
 
 public class Weapon : Item {
 
+    public const float CriticalMultiplier = 1.5f;
+    
     /// <summary>
     /// The damage done on a normal hit.
     /// </summary>

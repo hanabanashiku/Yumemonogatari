@@ -1,7 +1,10 @@
 using System;
 using UnityEngine;
 
-public class Coin : MonoBehaviour {
+/// <summary>
+/// Represents a coin collectible.
+/// </summary>
+public class Coin : Collectible<Item> {
     
     public enum Types {
         Genna,
@@ -38,19 +41,13 @@ public class Coin : MonoBehaviour {
         }
     }
 
-    // If the user collides with the coin, delete it and increase their currency.
-    private void OnTriggerEnter2D(Collider2D c) {
-        Debug.Log("Trigger");
+    protected override void Collect(PlayerCharacter player) {
         var hud = FindObjectOfType<HudController>();
-        var player = c.gameObject.GetComponent<PlayerCharacter>();
-        if(player == null)
-            return;
         if(hud == null)
             Debug.Log("Could not find HUD!");
         
         hud.ShowCoins();
         player.inventory.mon += Value;
-        Destroy(gameObject);
     }
 
     /// <summary>

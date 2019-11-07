@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour {
 
-    protected Animator Animator;
-    protected Rigidbody2D Body;
+    protected Animator animator;
+    protected Rigidbody2D body;
     private Coroutine _shieldRecharge;
 
     /// <summary>
@@ -46,8 +46,8 @@ public abstract class Character : MonoBehaviour {
     protected const float RunSpeed = 9.0f;
 
     protected virtual void Awake() {
-        Animator = gameObject.GetComponent<Animator>();
-        Body = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
+        body = gameObject.GetComponent<Rigidbody2D>();
     }
 
     /// <summary>
@@ -55,12 +55,9 @@ public abstract class Character : MonoBehaviour {
     /// </summary>
     /// <param name="damage">The amount of damage to deal.</param>
     public virtual void TakeDamage(int damage) {
-        // interrupt shield recharging
-        if(_shieldRecharge != null) {
-            StopCoroutine(_shieldRecharge);
-            _shieldRecharge = null;
-        }
-        
+        // interrupt shield
+        InterruptShield();
+
         health = Math.Max(health - damage, 0);
         
         // Mark a death.
@@ -72,6 +69,27 @@ public abstract class Character : MonoBehaviour {
         // begin to recharge shield
         if(inventory.EquippedArmor != null)
             _shieldRecharge = StartCoroutine(RechargeShield());
+    }
+
+    // Look for attacks
+    public void OnTriggerEnter2D(Collider2D c) {
+        var item = c.gameObject.GetComponent<Item>();
+        var proj = c.gameObject.GetComponent<Projectile>();
+        
+        // hit with a melee weapon.
+        if (item.GetType() == typeof(MeleeWeapon)) {
+            var w = (MeleeWeapon)item;
+            TakeDamage(w.damage);
+        }
+        
+        // hit with a projectile
+        else if (proj != null) {
+            var w = (RangedWeapon) item;
+            // take a critical if the head is hit.
+            if(c is CircleCollider2D)
+                TakeDamage((int)Math.Ceiling(proj.weapon.damage * Weapon.CriticalMultiplier));
+            else TakeDamage(proj.weapon.damage);
+        }
     }
 
     protected IEnumerator RechargeShield() {
@@ -89,6 +107,13 @@ public abstract class Character : MonoBehaviour {
         }
 
         // conclude coroutine and destroy pointer
+        _shieldRecharge = null;
+    }
+
+    protected void InterruptShield() {
+        if (_shieldRecharge == null) 
+            return;
+        StopCoroutine(_shieldRecharge);
         _shieldRecharge = null;
     }
 

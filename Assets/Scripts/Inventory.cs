@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
 /// The player's inventory and equipped items.
 /// </summary>
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour, ICollection<Item>, IEnumerable<Tuple<Item, int>> {
     /// <summary>
-    /// The player's items
+    /// The player's items, and the quantity.
     /// </summary>
-    public List<Item> items;
+    public Dictionary<Item, int> items;
 
     /// <summary>
     /// The amount of currency held by the player.
@@ -66,7 +68,7 @@ public class Inventory : MonoBehaviour {
             return;
         }
 
-        if(!items.Contains(weapon)) {
+        if(!Contains(weapon)) {
             Debug.Log($"The user's inventory does not contain {weapon.name}");
             return;
         }
@@ -85,7 +87,7 @@ public class Inventory : MonoBehaviour {
             return;
         }
 
-        if(!items.Contains(weapon)) {
+        if(!Contains(weapon)) {
             Debug.Log($"The user's inventory does not contain {weapon.name}");
             return;
         }
@@ -144,7 +146,8 @@ public class Inventory : MonoBehaviour {
     private void ResetAmmo() {
         if(_ranged == null)
             return;
-
+        InterruptReload();
+        
         if(_ranged.type == RangedWeapon.Types.Bow)
             arrows += remainingAmmo;
         else
@@ -163,7 +166,7 @@ public class Inventory : MonoBehaviour {
             return;
         }
 
-        if(!items.Contains(armor)) {
+        if(!Contains(armor)) {
             Debug.Log($"The user's inventory does not contain {armor.name}");
             return;
         }
@@ -172,6 +175,72 @@ public class Inventory : MonoBehaviour {
     }
 
     public Inventory() {
-        items = new List<Item>();
+        items = new Dictionary<Item, int>();
     }
+
+    IEnumerator<Tuple<Item, int>> IEnumerable<Tuple<Item, int>>.GetEnumerator() {
+        return items.Keys.Select(x => new Tuple<Item, int>(x, items[x])).GetEnumerator();
+    }
+
+    public IEnumerator<Item> GetEnumerator() {
+        return items.Keys.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() {
+        return GetEnumerator();
+    }
+
+    public void Add(Item item) {
+        if (item == null) {
+            Debug.LogWarning("Adding null item to inventory.");
+            return;
+        }
+            
+        items[item] += 1;
+    }
+
+    public void Add(Item item, int quantity) {
+        if(quantity < 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity));
+        
+        items[item] += quantity;
+    }
+
+    public void Clear() {
+        throw new NotSupportedException();
+    }
+
+    public bool Contains(Item item) {
+        if (item == null)
+            return false;
+        return items.ContainsKey(item);
+    }
+
+    public void CopyTo(Item[] array, int arrayIndex) {
+        items.Keys.CopyTo(array, arrayIndex);
+    }
+
+    public bool Remove(Item item) {
+        if (item == null)
+            return false;
+        return items.Remove(item);
+    }
+
+    public bool Remove(Item item, int quantity) {
+        if(quantity < 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity));
+
+        if (!items.ContainsKey(item))
+            return false;
+
+        var q = items[item];
+        if (q >= quantity)
+            return Remove(item);
+
+        items[item] -= quantity;
+        return true;
+    }
+
+    public int Count => items.Count;
+    public bool IsReadOnly => false;
 }

@@ -1,0 +1,47 @@
+﻿using System;
+using UnityEngine;
+
+/// <summary>
+/// An armor to be worn by a character.
+/// </summary>
+[Serializable]
+[CreateAssetMenu(menuName = "Items/Armor", fileName="Armor.asset")]
+public class Armor : Item {
+
+    /// <summary>
+    /// The amount of armor provided, in HP.
+    /// </summary>
+<<<<<<< HEAD:Assets/Scripts/Data/Armor.cs
+    public int Shield { get; set; }
+=======
+    public int shield;
+>>>>>>> 72482f73e4940d8f0e7fd349b0121f5648134824:Assets/Scripts/Armor.cs
+
+    /// <summary>
+    /// The amount of time it takes for the armor to begin recharging
+    /// </summary>
+<<<<<<< HEAD:Assets/Scripts/Data/Armor.cs
+    public float RechargeDelay { get; set; }
+=======
+    public float rechargeDelay;
+>>>>>>> 72482f73e4940d8f0e7fd349b0121f5648134824:Assets/Scripts/Armor.cs
+
+    /// <summary>
+    /// The amount to restore to the player's armor in HP/sec.
+    /// </summary>
+<<<<<<< HEAD:Assets/Scripts/Data/Armor.cs
+    public int RechargeSpeed { get; set; }
+
+    public Armor(string id, string name, string desc, Sprite sprite, int cost, int shield, float rechargeDelay,
+        int rechargeSpeed) :
+        base(id, name, desc, sprite, cost) {
+
+        Shield = shield;
+        RechargeDelay = rechargeDelay;
+        RechargeSpeed = rechargeSpeed;
+    }
+}
+=======
+    public int rechargeSpeed;
+}
+>>>>>>> 72482f73e4940d8f0e7fd349b0121f5648134824:Assets/Scripts/Armor.cs

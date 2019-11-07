@@ -27,24 +27,24 @@ public class PlayerCharacter : Character {
         if(d != _direction) {
 
             if(d == Vector2.left) {
-                Animator.SetInteger(Direction, 2);
-                Animator.SetFloat(Speed, speed); // rewrite so that these things don't happen in the same frame.
+                animator.SetInteger(Direction, 2);
+                animator.SetFloat(Speed, speed); // rewrite so that these things don't happen in the same frame.
             }
             else if(d == Vector2.right) {
-                Animator.SetInteger(Direction, 0);
-                Animator.SetFloat(Speed, speed);                
+                animator.SetInteger(Direction, 0);
+                animator.SetFloat(Speed, speed);                
             }
             else if(d == Vector2.up) {
-                Animator.SetInteger(Direction, 1);
-                Animator.SetFloat(Speed, speed);
+                animator.SetInteger(Direction, 1);
+                animator.SetFloat(Speed, speed);
             }
 
             else if(d == Vector2.down) {
-                Animator.SetInteger(Direction, 3);
-                Animator.SetFloat(Speed, speed);
+                animator.SetInteger(Direction, 3);
+                animator.SetFloat(Speed, speed);
             }
             else if (d == Vector2.zero) {
-                Animator.SetFloat(Speed, 0);
+                animator.SetFloat(Speed, 0);
             }
             else {
                 Debug.Log($"Unexpected {d}!");
@@ -52,7 +52,13 @@ public class PlayerCharacter : Character {
             _direction = d;
         }
 
-        Body.velocity = d * speed;
+        body.velocity = d * speed;
+    }
+
+    public override void TakeDamage(int damage) {
+        base.TakeDamage(damage);
+        // don't reload if we are taking damage
+        inventory.InterruptReload();
     }
 
     /// <summary>
