@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class PlayerCharacter : Character {
 
-    private Vector2 _direction = Vector2.up;
     private Sprite[] _sprites;
-    private static readonly int Direction = Animator.StringToHash("Direction");
-    private static readonly int Speed = Animator.StringToHash("Speed");
+    private Camera _camera;
 
     protected override void Awake() {
         base.Awake();
         inventory = gameObject.AddComponent<Inventory>();
+        _camera = Camera.main;
         identifier = "player";
         characterName = "Chousuke";
+        
+        Debug.Assert(_camera != null);
     }
 
     private void FixedUpdate() {
@@ -20,58 +21,34 @@ public class PlayerCharacter : Character {
         var v = Input.GetAxis("Vertical");
 
         var d = GetDirection(h, v);
-        var speed = Input.GetButton("Sprint") ? RunSpeed : WalkSpeed;
+        var sprint = Input.GetButton("Sprint");
+        
+        Move(d, sprint);
+    }
 
+    private void Update() {
+        if(Input.GetButtonUp("MeleeAttack"))
+            MeleeAttack();
+        
+        else if(Input.GetButtonUp("RangedAttack")) {
+            Vector2 target;
+            if(InputManager.InputState == InputManager.InputTypes.Keyboard)
+                target = _camera.ScreenToWorldPoint(Input.mousePosition);
+            else { // controller input
+                target = Direction;
+                var h = Input.GetAxis("Horizontal Aim");
+                var v = Input.GetAxis("Vertical Aim");
 
-        // changing direction
-        if(d != _direction) {
+                
+                if(v > 0 || Direction == Vector2.down) {
+                    target = Quaternion.AngleAxis(h * 90, Vector3.forward) * target;
+                }
 
-            if(d == Vector2.left) {
-                animator.SetInteger(Direction, 2);
-                animator.SetFloat(Speed, speed); // rewrite so that these things don't happen in the same frame.
+                target *= 100; // Move it a few units out
             }
-            else if(d == Vector2.right) {
-                animator.SetInteger(Direction, 0);
-                animator.SetFloat(Speed, speed);                
-            }
-            else if(d == Vector2.up) {
-                animator.SetInteger(Direction, 1);
-                animator.SetFloat(Speed, speed);
-            }
-
-            else if(d == Vector2.down) {
-                animator.SetInteger(Direction, 3);
-                animator.SetFloat(Speed, speed);
-            }
-            else if (d == Vector2.zero) {
-                animator.SetFloat(Speed, 0);
-            }
-            else {
-                Debug.Log($"Unexpected {d}!");
-            }
-            _direction = d;
+            RangedAttack(target);
         }
-
-        body.velocity = d * speed;
-    }
-
-    public override void TakeDamage(int damage) {
-        base.TakeDamage(damage);
-        // don't reload if we are taking damage
-        inventory.InterruptReload();
-    }
-
-    /// <summary>
-    /// Fire a ranged weapon.
-    /// </summary>
-    public void Fire() {
-        if(inventory.EquippedRangedWeapon == null)
-            return;
-        if(inventory.remainingAmmo == 0)
-            return;
-
-        inventory.remainingAmmo--;
-        throw new NotImplementedException();
+            
     }
     
     // Get the current direction based on input axis

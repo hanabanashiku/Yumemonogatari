@@ -16,4 +16,8 @@ public class MeleeWeapon : Weapon {
     /// </summary>
     public Types type;
 
+    /// <summary>
+    /// The time it takes to attack with the weapon.
+    /// </summary>
+    public int swingTime;
 }
