@@ -48,6 +48,9 @@ public class PlayerCharacter : Character {
             }
             RangedAttack(target);
         }
+
+        else if(Input.GetButtonUp("Pause") && Math.Abs(Time.timeScale) > 0.01)
+                GameManager.Instance.Pause();
             
     }
     

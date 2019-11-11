@@ -2,12 +2,11 @@ using System.Collections;
 using UnityEngine;
 
 public class HudController : MonoBehaviour {
-    private GameObject _coinDisplay;
+    public GameObject coinDisplay;
     private Coroutine _coinRoutine = null;
 
     private void Start() {
-        _coinDisplay = GameObject.Find("Coin Display");
-        _coinDisplay.SetActive(false);
+        coinDisplay.SetActive(false);
     }
 
     /// <summary>
@@ -17,8 +16,8 @@ public class HudController : MonoBehaviour {
         if(_coinRoutine != null)
             StopCoroutine(_coinRoutine);
         
-        _coinDisplay.SetActive(true);
-        _coinRoutine = StartCoroutine(DelayedHide(_coinDisplay));
+        coinDisplay.SetActive(true);
+        _coinRoutine = StartCoroutine(DelayedHide(coinDisplay));
     }
 
     private static IEnumerator DelayedHide(GameObject o, float seconds = 3) {

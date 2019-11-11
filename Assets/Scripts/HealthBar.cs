@@ -8,6 +8,8 @@ public class HealthBar : MonoBehaviour {
 
     private void Awake() {
         _slider = gameObject.GetComponentInChildren<Slider>();
+        if(character is null)
+            character = FindObjectOfType<PlayerCharacter>();
     }
 
     private void Update() {
