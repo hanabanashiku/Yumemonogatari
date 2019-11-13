@@ -17,16 +17,19 @@ public class PauseMenuController : MonoBehaviour {
         public GameObject[] pages;
         
         private Pages _currentPage = Pages.Map;
+        private GameObject _hud;
 
         private void Awake() {
                 // pause the game
                 Time.timeScale = 0;
+                _hud = FindObjectOfType<HudController>().gameObject;
+                _hud.SetActive(false);
         }
 
         private void OnDestroy() {
                 // resume the game
                 Time.timeScale = 1;
-                GameManager.Instance.hud.SetActive(true);
+                _hud.SetActive(true);
         }
 
         private void Update() {
@@ -36,7 +39,7 @@ public class PauseMenuController : MonoBehaviour {
                 else if(Input.GetButtonUp("Menu Right"))
                         MovePageRight();
                 // unpause
-                else if(Input.GetButtonUp("Pause"))
+                else if(Input.GetButtonUp("Pause") || Input.GetButtonUp("Cancel"))
                         Destroy(gameObject);
         }
 

@@ -195,6 +195,27 @@ public abstract class Character : MonoBehaviour {
             _shieldRecharge = StartCoroutine(RechargeShield());
     }
 
+    /// <summary>
+    /// Heal the character, up to the maximum.
+    /// </summary>
+    /// <param name="hp">The health to restore.</param>
+    public virtual void Heal(int hp) {
+        health = Math.Min(health + hp, maxHealth);
+    }
+
+    /// <summary>
+    /// Restore the character's shields, up to the maximum.
+    /// </summary>
+    /// <param name="s">The amount of shield to restore.</param>
+    public virtual void RestoreShield(int s) {
+        shield = Math.Min(shield + s, MaxShield);
+    }
+
+    public virtual void Consume(Consumable item) {
+        Heal(item.health);
+        RestoreShield(item.shield);
+    }
+
     // Look for attacks
     public void OnTriggerEnter2D(Collider2D c) {
         var melee = c.gameObject.GetComponent<MeleeHitboxController>();
@@ -224,7 +245,7 @@ public abstract class Character : MonoBehaviour {
         // recharge the shield six times a second until full.
         var inc = armor.rechargeSpeed / 6;
         while(shield < armor.shield) {
-            shield = Math.Min(shield + inc, armor.shield);
+            RestoreShield(inc);
             yield return new WaitForSeconds(1/6f);
         }
 

@@ -241,6 +241,28 @@ public class Inventory : MonoBehaviour, ICollection<Item>, IEnumerable<Tuple<Ite
         return true;
     }
 
+    /// <summary>
+    /// Get and set the quantity of an item
+    /// </summary>
+    /// <param name="i">The item</param>
+    /// <exception cref="ArgumentOutOfRangeException">If the quantity is out of the range [0, 999]</exception>
+    public int this[Item i] {
+        get {
+            if(!Contains(i))
+                return 0;
+            return items[i];
+        }
+        set {
+            if(value < 0 || value > 999)
+                throw new ArgumentOutOfRangeException(nameof(value));
+            items[i] = value;
+        }
+    }
+
+    public IEnumerable<Tuple<Item, int>> this[Type t] {
+        get { return items.Keys.Where(x => x.GetType() == t).Select(x => new Tuple<Item, int>(x, items[x])); }
+    }
+
     public int Count => items.Count;
     public bool IsReadOnly => false;
 }
