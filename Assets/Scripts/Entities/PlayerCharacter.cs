@@ -53,9 +53,6 @@ namespace Yumemonogatari.Entities {
                 RangedAttack(target);
             }
 
-            else if(Input.GetButtonUp("Pause") && Math.Abs(Time.timeScale) > 0.01)
-                GameManager.Instance.Pause();
-
         }
 
         // Get the current direction based on input axis
