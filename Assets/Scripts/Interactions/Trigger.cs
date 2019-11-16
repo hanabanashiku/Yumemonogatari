@@ -28,7 +28,7 @@ namespace Yumemonogatari.Interactions {
         /// <summary>
         /// The type of trigger.
         /// </summary>
-        public virtual TriggerTypes Type { get; }
+        public abstract TriggerTypes Type { get; }
 
         /// <summary>
         /// Should the trigger be activated?

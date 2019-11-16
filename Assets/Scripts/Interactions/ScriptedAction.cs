@@ -26,9 +26,11 @@ namespace Yumemonogatari.Interactions {
         /// <summary>
         /// The type of action.
         /// </summary>
-        public virtual ActionTypes Type { get; }
+        public abstract ActionTypes Type { get; }
         
-        // Perform the action
+        /// <summary>
+        /// Perform the action.
+        /// </summary>
         public abstract void Perform();
     }
 }
