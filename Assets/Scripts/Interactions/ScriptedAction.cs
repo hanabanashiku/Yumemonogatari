@@ -20,7 +20,18 @@ namespace Yumemonogatari.Interactions {
             /// <summary>
             /// Load a prefab resource at a given location.
             /// </summary>
-            LoadResource
+            LoadResource,
+            /// <summary>
+            /// Add an item to the player's inventory.
+            /// </summary>
+            AddToInventory
+        }
+
+        private static event InteractionManager.OnActionCompleted ActionCompleted;
+
+        protected ScriptedAction() {
+            if(ActionCompleted is null)
+                ActionCompleted += InteractionManager.Instance.ActionCompleted;
         }
         
         /// <summary>

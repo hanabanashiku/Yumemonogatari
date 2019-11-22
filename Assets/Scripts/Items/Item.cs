@@ -30,5 +30,4 @@ public class Item : ScriptableObject {
     /// The cost of the item, in mon.
     /// </summary>
     public int price;
-
 }

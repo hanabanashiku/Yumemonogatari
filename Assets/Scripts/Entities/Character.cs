@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Yumemonogatari.Items;
 
@@ -79,9 +80,9 @@ namespace Yumemonogatari.Entities {
             Melee = gameObject.GetComponent<MeleeHitboxController>();
 
             if(ArrowProjectile == null)
-                Resources.Load("Prefabs/Projectile_Arrow");
+                ArrowProjectile = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Projectile_Arrow.prefab");
             if(BulletProjectile == null)
-                Resources.Load("Prefabs/Projectile_Bullet");
+                BulletProjectile = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Projectile_Bullet.prefab");
         }
 
         /// <summary>
@@ -131,6 +132,15 @@ namespace Yumemonogatari.Entities {
             }
 
             Body.velocity = d * speed;
+        }
+
+        /// <summary>
+        /// Navigate towards a given point, turning on intersections.
+        /// </summary>
+        /// <param name="location">The location to move to.</param>
+        /// <param name="sprint">Whether or not to run.</param>
+        public void MoveTo(Vector2 location, bool sprint) {
+            throw new NotImplementedException();
         }
 
         /// <summary>

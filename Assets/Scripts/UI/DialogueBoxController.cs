@@ -21,7 +21,7 @@ namespace Yumemonogatari.UI {
         private event InteractionManager.OnActionCompleted ActionCompleted;
 
         private void Start() {
-            ActionCompleted += InteractionManager.Instance.OnDialogueCompleted;
+            ActionCompleted += InteractionManager.Instance.ActionCompleted;
         }
         
         private void OnEnable() {

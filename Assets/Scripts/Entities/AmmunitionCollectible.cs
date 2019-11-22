@@ -22,5 +22,11 @@ namespace Yumemonogatari.Entities {
                     throw new ArgumentOutOfRangeException(nameof(item));
             }
         }
+        
+        protected override void Attach(GameObject c) {
+            var collectible = c.AddComponent(GetType()) as AmmunitionCollectible;
+            if(collectible == null) throw new InvalidCastException();
+            collectible.item = item;
+        }
     }
 }

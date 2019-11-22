@@ -15,11 +15,25 @@ namespace Yumemonogatari.Interactions {
         // the list of actions
         private Queue<ScriptedAction> _actions;
 
+        private Queue<ScriptedAction> _clone;
+
         /// <summary>
         /// Start running the script
         /// </summary>
         public void Start() {
-            throw new NotImplementedException();
+            _clone = new Queue<ScriptedAction>(_actions);
+            Next();
+        }
+
+        /// <returns>True if there is another action to perform</returns>
+        public bool HasNext() => _clone != null && _clone.Count > 0;
+
+        /// <summary>
+        /// Perform the next action.
+        /// </summary>
+        public void Next() {
+            var action = _clone.Dequeue();
+            action.Perform();
         }
     }
 }
