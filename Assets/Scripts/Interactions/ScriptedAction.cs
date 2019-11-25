@@ -1,8 +1,9 @@
 using System;
+using UnityEngine;
 
 namespace Yumemonogatari.Interactions {
     [Serializable]
-    public abstract class ScriptedAction {
+    public abstract class ScriptedAction : MonoBehaviour {
 
         public enum ActionTypes {
             /// <summary>

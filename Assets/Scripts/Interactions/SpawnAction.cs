@@ -1,4 +1,6 @@
 using System;
+using UnityEditor;
+using UnityEngine;
 
 namespace Yumemonogatari.Interactions {
     /// <summary>
@@ -8,8 +10,13 @@ namespace Yumemonogatari.Interactions {
     public class SpawnAction : ScriptedAction {
         public override ActionTypes Type => ActionTypes.Spawn;
         
+        public Vector2 Location;
+        public string Prefab;
+        
         public override void Perform() {
-            throw new System.NotImplementedException();
+            var obj = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/Prefabs/Spawns/{Prefab}.prefab");
+            Instantiate(obj);
+            obj.transform.position = Location;
         }
     }
 }
