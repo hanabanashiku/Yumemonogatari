@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2430668079
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 62df87dc3fa119b25177dc69c64cf1ca
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Images/Icons/shield-recharge.png
+Dependencies: []

@@ -1,0 +1,81 @@
+ManifestFileVersion: 0
+CRC: 3237898163
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1b2860f7ad0cd3f3b3ab28bc9c007164
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b902dca7e25c57333199ee6b915956c2
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d785ab938ae86ceddb8ce14874fa0673, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 70108a661a1746c98c1d30c8ceb08d44, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c577385aff3991da6ac6f589dd181316, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c2de819e1b4b42f78650840f4b3fd9ee, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Items/miso.asset
+- Assets/Items/Weapons/daikyu.asset
+- Assets/Items/Weapons/hinawaju.asset
+- Assets/Items/natto.asset
+- Assets/Items/Weapons/wakizashi.asset
+- Assets/Items/konnyaku.asset
+- Assets/Items/Weapons/smithwesson.asset
+- Assets/Items/gobou.asset
+- Assets/Prefabs/Projectile_Bullet.prefab
+- Assets/Items/bullet15.asset
+- Assets/Items/sake.asset
+- Assets/Items/Weapons/kaiken.asset
+- Assets/Items/bullet.asset
+- Assets/Items/bullet3.asset
+- Assets/Items/irizake.asset
+- Assets/Items/arrow5.asset
+- Assets/Items/rice.asset
+- Assets/Items/Weapons/chassepot.asset
+- Assets/Items/Weapons/katana.asset
+- Assets/Items/sumashijiru.asset
+- Assets/Items/arrow10.asset
+- Assets/Items/Weapons/nodachi.asset
+- Assets/Items/Weapons/snider.asset
+- Assets/Items/arrow3.asset
+- Assets/Items/Weapons/naginata.asset
+- Assets/Items/Weapons/tanto.asset
+- Assets/Items/soba.asset
+- Assets/Items/bullet7.asset
+- Assets/Items/arrow.asset
+- Assets/Items/Weapons/konaginata.asset
+- Assets/Items/Weapons/dreyse62.asset
+- Assets/Prefabs/Projectile_Arrow.prefab
+- Assets/Items/Weapons/spencer.asset
+- Assets/Items/Weapons/hankyu.asset
+- Assets/Items/Weapons/minie.asset
+- Assets/Items/Weapons/dreyse41.asset
+- Assets/Items/aburage.asset
+- Assets/Items/takuan.asset
+Dependencies: []

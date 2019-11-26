@@ -38,7 +38,7 @@ namespace Yumemonogatari.Entities {
                 var bounds = col.bounds;
 
                 var collectible = gameObject.AddComponent<AmmunitionCollectible>();
-                collectible.item = AssetDatabase.LoadAssetAtPath<Ammunition>("Assets/Items/arrow.asset");
+                collectible.item = AssetBundles.Item.LoadAsset<Ammunition>("arrow");
                 collectible.Instantiate(bounds);
             }
 

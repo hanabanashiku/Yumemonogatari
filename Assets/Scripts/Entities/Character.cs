@@ -80,9 +80,9 @@ namespace Yumemonogatari.Entities {
             Melee = gameObject.GetComponent<MeleeHitboxController>();
 
             if(ArrowProjectile == null)
-                ArrowProjectile = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Projectile_Arrow.prefab");
+                AssetBundles.Item.LoadAsset<GameObject>("Projectile_Arrow");
             if(BulletProjectile == null)
-                BulletProjectile = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Projectile_Bullet.prefab");
+                AssetBundles.Item.LoadAsset<GameObject>("Projectile_Bullet");
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace Yumemonogatari.Interactions {
         public string Prefab;
         
         public override void Perform() {
-            var obj = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/Prefabs/Spawns/{Prefab}.prefab");
+            var obj = AssetBundles.Spawns.LoadAsset<GameObject>(Prefab);
             Instantiate(obj);
             obj.transform.position = Location;
         }

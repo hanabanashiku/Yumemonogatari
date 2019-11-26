@@ -35,5 +35,9 @@ namespace Yumemonogatari.Interactions {
             var action = _clone.Dequeue();
             action.Perform();
         }
+
+        public InteractionScript() {
+            _actions = new Queue<ScriptedAction>();
+        }
     }
 }

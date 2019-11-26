@@ -19,11 +19,11 @@ namespace Yumemonogatari.UI {
     
         private void Awake() {
             if(_borderNormal is null)
-                _borderNormal = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Tiles/border-blue.png");
+                _borderNormal = AssetBundles.Ui.LoadAsset<Sprite>("border-blue.");
             if(_borderSelected is null)
-                _borderSelected = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Tiles/border-select.png");
+                _borderSelected = AssetBundles.Ui.LoadAsset<Sprite>("border-select");
             if(_equippedStar is null)
-                _equippedStar = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Images/Icons/equipped.png");
+                _equippedStar = AssetBundles.Ui.LoadAsset<Sprite>("equipped");
             
             border = gameObject.AddComponent<SpriteRenderer>();
             Deselect(); // set the border image as normal

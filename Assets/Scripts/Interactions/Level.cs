@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using UnityEditor;
 using UnityEngine;
 
 namespace Yumemonogatari.Interactions {
@@ -64,7 +63,7 @@ namespace Yumemonogatari.Interactions {
         /// <param name="level">The level number.</param>
         /// <returns></returns>
         internal static Level LoadLevel(int level) {
-            var asset = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Levels/{level}.xml");
+            var asset = AssetBundles.Level.LoadAsset<TextAsset>($"{level}");
             if(asset is null) {
                 Debug.LogWarning($"Could not find level {level}");
                 return null;
