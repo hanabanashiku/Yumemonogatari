@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yumemonogatari.Entities;
 using Yumemonogatari.Interactions;
 
@@ -26,6 +27,7 @@ namespace Yumemonogatari {
             Instance = this;
             InputManager = gameObject.AddComponent<InputManager>();
             InteractionManager = gameObject.AddComponent<InteractionManager>();
+            SceneManager.activeSceneChanged += OnSceneChanged;
         }
 
         private void Update() {
@@ -33,6 +35,10 @@ namespace Yumemonogatari {
             // preventing multiple pause menus or resetting the scale when dialogue is shown.
             if(Input.GetButtonUp("Pause") && Math.Abs(Time.timeScale) > 0.01)
                 Pause();
+        }
+
+        private static void OnSceneChanged(Scene current, Scene next) {
+            InteractionManager.Instance.SceneLoaded();
         }
     
         private void Pause() {

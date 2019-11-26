@@ -59,6 +59,18 @@ namespace Yumemonogatari.Interactions {
             _currentScript.Start();
         }
 
+        public void SceneLoaded() {
+            InteractionScript script = null;
+
+            if(CurrentLevel != null)
+                script = CurrentLevel.GetSceneTrigger();
+            if(script == null)
+                return;
+
+            _currentScript = script;
+            _currentScript.Start();
+        }
+
         public void ActionCompleted() {
             if(_currentScript.HasNext())
                 _currentScript.Next();

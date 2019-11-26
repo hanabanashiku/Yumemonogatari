@@ -54,7 +54,12 @@ namespace Yumemonogatari.Interactions {
         public InteractionScript GetPlayerEnterTrigger() {
             return scripts.FirstOrDefault(x =>
                 x.Trigger.GetType() == typeof(OnPlayerEnterTrigger) &&
-                ((OnPlayerEnterTrigger)x.Trigger).ConditionIsMet());
+                x.Trigger.ConditionIsMet());
+        }
+
+        public InteractionScript GetSceneTrigger() {
+            return scripts.FirstOrDefault(x =>
+                x.Trigger.GetType() == typeof(OnSceneLoadedTrigger) && x.Trigger.ConditionIsMet());
         }
 
         /// <summary>
