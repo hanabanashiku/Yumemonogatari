@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -53,6 +54,39 @@ namespace Yumemonogatari {
         /// <returns>The character, or null.</returns>
         public static Character FindNpc(string identifier) {
             return FindObjectsOfType<Character>().FirstOrDefault(x => x.identifier.Equals(identifier));
+        }
+
+        /// <summary>
+        /// Save the game
+        /// </summary>
+        /// <param name="save">The save number to save.</param>
+        public static void SaveGame(int save = -1) {
+            if(save == -1) {
+                var files = Directory.GetFiles(Application.persistentDataPath, "*.sav");
+                for(var i = 0; ; i++)
+                    if(!files.Contains($"{i}.sav")) {
+                        save = i;
+                        break;
+                    }
+            }
+            var path = Path.Combine(Application.persistentDataPath, $"{save}.sav");
+            var player = FindObjectOfType<PlayerCharacter>();
+
+            var gameSave = new GameSave() {
+                time = DateTime.Now,
+                settings = SettingsManager.Instance,
+                currentScene = SceneManager.GetActiveScene().name,
+                currentLevel = InteractionManager.CurrentLevel.number,
+                currentPosition = player.gameObject.transform.position,
+                inventory = player.inventory,
+                health = player.health,
+                shield = player.shield
+            };
+            gameSave.Serialize(path);
+        }
+
+        public void LoadGame() {
+            throw new NotImplementedException();
         }
     }
 }
