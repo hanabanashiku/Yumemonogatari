@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using Yumemonogatari.Interactions;
 using Yumemonogatari.Items;
+using Random = UnityEngine.Random;
 
 namespace Yumemonogatari.Entities {
+    [Serializable]
     public class Enemy : Character {
         public override void OnDeath() {
             InteractionManager.Instance.NpcDeath(identifier); // tell the game there was a death

@@ -1,3 +1,4 @@
+using System;
 using Yumemonogatari.Interactions;
 using Yumemonogatari.Items;
 
@@ -5,6 +6,7 @@ namespace Yumemonogatari.Entities {
     /// <summary>
     /// An NPC not involved in combat.
     /// </summary>
+    [Serializable]
     public class Npc : Character, IInteractable {
 
         // NPCs should not receive damage.
@@ -22,7 +24,7 @@ namespace Yumemonogatari.Entities {
             maxHealth = 1;
         }
 
-        public void Interact() {
+        public virtual void Interact() {
             InteractionManager.Instance.ObjectActivated(identifier);
         }
     }

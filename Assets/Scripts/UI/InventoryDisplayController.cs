@@ -33,7 +33,7 @@ namespace Yumemonogatari.UI {
         public Text consumableShieldStat;
         
         private List<ItemDisplayController> _gridItems; // The current list of object icons
-        private Dictionary<Pages, List<ItemDisplayController>> _lists; // the cached object icons
+        protected Dictionary<Pages, List<ItemDisplayController>> Lists; // the cached object icons
         private ItemDisplayController _selected; // The currently selected icon
         private Pages _currentPage; // The current page
         private int _maxColumns; // The maximum number of columns in the UI
@@ -46,12 +46,7 @@ namespace Yumemonogatari.UI {
             inventory = player.inventory;
             
             // cache the icons and data we need
-            _lists = new Dictionary<Pages, List<ItemDisplayController>> {
-                [Pages.Melee] = inventory[typeof(MeleeWeapon)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
-                [Pages.Ranged] = inventory[typeof(RangedWeapon)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
-                [Pages.Armor] = inventory[typeof(Armor)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
-                [Pages.Consumable] = inventory[typeof(Consumable)].Select(x => LoadItem(x.Item1, x.Item2)).ToList()
-            };
+            Cache();
     
             ChangePage(_currentPage);
             if(_selected == null && _gridItems.Count > 0)
@@ -59,8 +54,17 @@ namespace Yumemonogatari.UI {
     
             _maxColumns = grid.gameObject.GetComponentInChildren<GridLayoutGroup>().constraintCount;
         }
+
+        protected virtual void Cache() {
+            Lists = new Dictionary<Pages, List<ItemDisplayController>> {
+                [Pages.Melee] = inventory[typeof(MeleeWeapon)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
+                [Pages.Ranged] = inventory[typeof(RangedWeapon)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
+                [Pages.Armor] = inventory[typeof(Armor)].Select(x => LoadItem(x.Item1, x.Item2)).ToList(),
+                [Pages.Consumable] = inventory[typeof(Consumable)].Select(x => LoadItem(x.Item1, x.Item2)).ToList()
+            };
+        }
     
-        private void Update() {
+        protected virtual void Update() {
             if(Input.GetButtonUp("Submit")) {
                 ActivateItem(_selected);
                 return;
@@ -212,7 +216,7 @@ namespace Yumemonogatari.UI {
         /// Change the page and populate it.
         /// </summary>
         /// <param name="page">The new page.</param>
-        private void ChangePage(Pages page) {
+        protected void ChangePage(Pages page) {
             if(_currentPage != page) {
                 var p = navPointer.localPosition;
                 p.x = 7 + 70 * (int)page; // move the marker under the right page.
@@ -228,8 +232,8 @@ namespace Yumemonogatari.UI {
         /// Populate the current page with items.
         /// </summary>
         /// <remarks>Should only be called once.</remarks>
-        private void Populate() {
-            _gridItems = _lists[_currentPage];
+        protected void Populate() {
+            _gridItems = Lists[_currentPage];
             foreach(var i in _gridItems) {
                 i.transform.SetParent(grid);
                 i.gameObject.SetActive(true);
@@ -237,7 +241,7 @@ namespace Yumemonogatari.UI {
         }
     
         // instantiate and load an item icon
-        private ItemDisplayController LoadItem(Item item, int quantity) {
+        protected ItemDisplayController LoadItem(Item item, int quantity = 1) {
             var obj = new GameObject();
             var idc = obj.AddComponent<ItemDisplayController>();
             idc.item = item;
@@ -270,7 +274,7 @@ namespace Yumemonogatari.UI {
         /// Called if the user hit the activate
         /// </summary>
         /// <param name="idc">The item to equip, dequip, or consume</param>
-        private void ActivateItem(ItemDisplayController idc) {
+        protected virtual void ActivateItem(ItemDisplayController idc) {
             var item = (Item)idc;
             
             // find the type
@@ -322,7 +326,7 @@ namespace Yumemonogatari.UI {
             DeleteItem(idc, 1);
         }
         
-        private void Clear() {
+        protected void Clear() {
             foreach(var i in _gridItems) {
                 i.gameObject.SetActive(false);
                 //i.transform.SetParent(null);
