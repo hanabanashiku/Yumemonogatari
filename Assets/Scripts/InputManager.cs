@@ -13,7 +13,6 @@ namespace Yumemonogatari {
         public static InputTypes InputState { get; private set; } = InputTypes.Keyboard;
     
         private void OnGUI() {
-            Debug.Log(string.Join(" ", Input.GetJoystickNames()));
             var e = Event.current;
     
             if(e.isMouse || e.isScrollWheel)
