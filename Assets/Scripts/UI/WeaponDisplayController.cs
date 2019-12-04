@@ -16,11 +16,8 @@ namespace Yumemonogatari.UI {
     
         private void Start() {
             var player = FindObjectOfType<PlayerCharacter>();
-            if(player == null)
-                Debug.LogWarning("Null player reference");
             inventory = player.inventory;
-            if(inventory == null)
-                Debug.LogWarning("Null inventory reference");
+            Debug.Assert(inventory != null);
         }
     
         private void OnGUI() {

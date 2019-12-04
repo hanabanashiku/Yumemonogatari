@@ -5,7 +5,7 @@ namespace Yumemonogatari.Editor {
     public class AssetBundles {
         [MenuItem("Assets/Build Asset Bundles")]
         static void BuildAllAssetBundles() {
-            const string dir = "Assets/Bundles";
+            const string dir = "Assets/StreamingAssets";
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 

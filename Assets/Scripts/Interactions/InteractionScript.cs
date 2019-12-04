@@ -10,34 +10,38 @@ namespace Yumemonogatari.Interactions {
         /// <summary>
         /// The trigger to start the interaction.
         /// </summary>
-        public Trigger Trigger { get; protected set; }
+        public Trigger trigger;
 
         // the list of actions
-        private Queue<ScriptedAction> _actions;
+        public List<ScriptedAction> actions;
 
-        private Queue<ScriptedAction> _clone;
+        private Queue<ScriptedAction> _actionQueue;
 
         /// <summary>
         /// Start running the script
         /// </summary>
         public void Start() {
-            _clone = new Queue<ScriptedAction>(_actions);
+            _actionQueue = new Queue<ScriptedAction>(actions);
             Next();
         }
 
         /// <returns>True if there is another action to perform</returns>
-        public bool HasNext() => _clone != null && _clone.Count > 0;
+        public bool HasNext() => _actionQueue != null && _actionQueue.Count > 0;
 
         /// <summary>
         /// Perform the next action.
         /// </summary>
         public void Next() {
-            var action = _clone.Dequeue();
+            if(_actionQueue is null)
+                throw new InvalidOperationException();
+            var action = _actionQueue.Dequeue();
             action.Perform();
+            if(_actionQueue.Count == 0)
+                _actionQueue = null;
         }
 
         public InteractionScript() {
-            _actions = new Queue<ScriptedAction>();
+            actions = new List<ScriptedAction>();
         }
     }
 }

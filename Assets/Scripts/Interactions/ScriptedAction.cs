@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Yumemonogatari.Interactions {
     [Serializable]
-    public abstract class ScriptedAction : MonoBehaviour {
+    public abstract class ScriptedAction {
 
         public enum ActionTypes {
             /// <summary>
@@ -30,7 +30,7 @@ namespace Yumemonogatari.Interactions {
 
         private static event InteractionManager.OnActionCompleted ActionCompleted;
 
-        protected ScriptedAction() {
+        public ScriptedAction() {
             if(ActionCompleted is null)
                 ActionCompleted += InteractionManager.Instance.ActionCompleted;
         }

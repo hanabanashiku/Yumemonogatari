@@ -79,6 +79,9 @@ namespace Yumemonogatari.Entities {
             Body = gameObject.GetComponent<Rigidbody2D>();
             Melee = gameObject.GetComponent<MeleeHitboxController>();
 
+            if(inventory is null)
+                inventory = gameObject.AddComponent<Inventory>();
+
             if(ArrowProjectile == null)
                 AssetBundles.Item.LoadAsset<GameObject>("Projectile_Arrow");
             if(BulletProjectile == null)

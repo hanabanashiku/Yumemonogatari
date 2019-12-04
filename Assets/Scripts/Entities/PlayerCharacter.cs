@@ -10,12 +10,12 @@ namespace Yumemonogatari.Entities {
 
         protected override void Awake() {
             base.Awake();
-            inventory = gameObject.AddComponent<Inventory>();
             _camera = Camera.main;
             identifier = "player";
             characterName = "Chousuke";
 
             Debug.Assert(_camera != null);
+            Debug.Assert(inventory != null);
         }
 
         private void FixedUpdate() {

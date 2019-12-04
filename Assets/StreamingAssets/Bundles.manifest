@@ -1,13 +1,17 @@
 ManifestFileVersion: 0
-CRC: 2148535258
+CRC: 3899641691
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: ui
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: spawns
     Info_1:
       Name: spawns
       Dependencies: {}
     Info_2:
       Name: items
+      Dependencies: {}
+    Info_3:
+      Name: leveldata
       Dependencies: {}

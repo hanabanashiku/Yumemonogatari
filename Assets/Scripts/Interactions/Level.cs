@@ -24,7 +24,7 @@ namespace Yumemonogatari.Interactions {
         internal bool HasPlayerEnterTriggers {
             get {
                 if(!_playerEnterTriggers.HasValue)
-                    _playerEnterTriggers = scripts.Any(x => x.Trigger.GetType() == typeof(OnPlayerEnterTrigger));
+                    _playerEnterTriggers = scripts.Any(x => x.trigger.GetType() == typeof(OnPlayerEnterTrigger));
                 return _playerEnterTriggers.Value;
             }
         }
@@ -36,8 +36,8 @@ namespace Yumemonogatari.Interactions {
         /// <returns>The trigger, or null.</returns>
         public InteractionScript GetDeathTrigger(string identifier) {
             return scripts.FirstOrDefault(x =>
-                x.Trigger.GetType() == typeof(OnNpcDeathTrigger) &&
-                ((OnNpcDeathTrigger)x.Trigger).Identifier.Equals(identifier));
+                x.trigger.GetType() == typeof(OnNpcDeathTrigger) &&
+                ((OnNpcDeathTrigger)x.trigger).Identifier.Equals(identifier));
         }
         
         /// <summary>
@@ -47,19 +47,19 @@ namespace Yumemonogatari.Interactions {
         /// <returns>The trigger, or null.</returns>
         public InteractionScript GetActivationTrigger(string identifier) {
             return scripts.FirstOrDefault(x =>
-                x.Trigger.GetType() == typeof(OnActivateTrigger) &&
-                ((OnActivateTrigger)x.Trigger).Identifier.Equals(identifier));
+                x.trigger.GetType() == typeof(OnActivateTrigger) &&
+                ((OnActivateTrigger)x.trigger).Identifier.Equals(identifier));
         }
 
         public InteractionScript GetPlayerEnterTrigger() {
             return scripts.FirstOrDefault(x =>
-                x.Trigger.GetType() == typeof(OnPlayerEnterTrigger) &&
-                x.Trigger.ConditionIsMet());
+                x.trigger.GetType() == typeof(OnPlayerEnterTrigger) &&
+                x.trigger.ConditionIsMet());
         }
 
         public InteractionScript GetSceneTrigger() {
             return scripts.FirstOrDefault(x =>
-                x.Trigger.GetType() == typeof(OnSceneLoadedTrigger) && x.Trigger.ConditionIsMet());
+                x.trigger.GetType() == typeof(OnSceneLoadedTrigger) && x.trigger.ConditionIsMet());
         }
 
         /// <summary>

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3131699790
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 23cf2fc1ff4375dfa2d5f81a26e18d3d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Levels/0.xml
+- Assets/Levels/1.xml
+Dependencies: []
