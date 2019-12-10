@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yumemonogatari.Entities;
 using Yumemonogatari.Interactions;
+using Yumemonogatari.Items;
+
 namespace Yumemonogatari.UI {
     public class MainMenuController : MonoBehaviour {
         public void Quit() {
@@ -9,16 +12,14 @@ namespace Yumemonogatari.UI {
 
         public void NewGame() {
             SceneManager.LoadScene("Shouheikou");
-            var canvas = AssetBundles.Ui.LoadAsset<GameObject>("HUDCanvas");
-            canvas = Instantiate(canvas);
-            DontDestroyOnLoad(canvas);
-            var manager = AssetBundles.Ui.LoadAsset<GameObject>("GameManager");
-            manager = Instantiate(manager);
-            DontDestroyOnLoad(manager);
+            GameManager.SetUpScene();
             InteractionManager.Instance.LoadLevel(1);
-            var player = AssetBundles.Spawns.LoadAsset<GameObject>("Player");
-            player = Instantiate(player);
-            DontDestroyOnLoad(player);
+            var player = FindObjectOfType<PlayerCharacter>();
+            Debug.Assert(player != null);
+            
+            // default items
+            var shinai = AssetBundles.Item.LoadAsset<MeleeWeapon>("shinai");
+            player.inventory.Add(shinai);
         }
 
         public void LoadGame() {

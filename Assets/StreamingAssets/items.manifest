@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3237898163
+CRC: 4061087421
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1b2860f7ad0cd3f3b3ab28bc9c007164
+    Hash: 28892a52bed1e9d48352aa40946bef53
   TypeTreeHash:
     serializedVersion: 2
     Hash: b902dca7e25c57333199ee6b915956c2
@@ -60,6 +60,7 @@ Assets:
 - Assets/Items/Weapons/chassepot.asset
 - Assets/Items/Weapons/katana.asset
 - Assets/Items/sumashijiru.asset
+- Assets/Items/Weapons/shinai.asset
 - Assets/Items/arrow10.asset
 - Assets/Items/Weapons/nodachi.asset
 - Assets/Items/Weapons/snider.asset

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Yumemonogatari {
     [Serializable]
     public class SettingsManager : MonoBehaviour {
-        public static SettingsManager Instance { get; private set; }
+        public static SettingsManager Instance { get; set; }
 
         public enum TextSpeeds {
             /// <summary>3 cps</summary>

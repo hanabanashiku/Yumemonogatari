@@ -90,8 +90,16 @@ namespace Yumemonogatari {
             gameSave.Serialize(path);
         }
 
-        public void LoadGame() {
-            throw new NotImplementedException();
+        public static void SetUpScene() {
+            var canvas = AssetBundles.Ui.LoadAsset<GameObject>("HUDCanvas");
+            canvas = Instantiate(canvas);
+            DontDestroyOnLoad(canvas);
+            var manager = AssetBundles.Ui.LoadAsset<GameObject>("GameManager");
+            manager = Instantiate(manager);
+            DontDestroyOnLoad(manager);
+            var player = AssetBundles.Spawns.LoadAsset<GameObject>("Player");
+            player = Instantiate(player);
+            DontDestroyOnLoad(player);
         }
     }
 }

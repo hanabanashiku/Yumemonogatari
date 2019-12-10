@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca9240bf28132389a3479b469a06454, type: 3}
+  m_Name: shinai
+  m_EditorClassIdentifier: 
+  identifier: shinai
+  name: Shinai
+  description: A flexible training sword made from four slats of bamboo. This weapon
+    was invented in  Kan'en 3 as an alternative to stiff wooden bokken training swords
+    which often produced serious injuries among practitioners.
+  sprite: {fileID: 21300000, guid: a10212025256f489cb2fdf9f31a3b444, type: 3}
+  price: 600
+  damage: 5
+  range: 0
+  time: 0.4
+  type: 0
+  swingTime: 0
