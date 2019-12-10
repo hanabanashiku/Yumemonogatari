@@ -20,5 +20,10 @@ namespace Yumemonogatari.UI {
             player = Instantiate(player);
             DontDestroyOnLoad(player);
         }
+
+        public void LoadGame() {
+            var canvas = AssetBundles.Ui.LoadAsset<GameObject>("Load Menu");
+            Instantiate(canvas);
+        }
     }
 }

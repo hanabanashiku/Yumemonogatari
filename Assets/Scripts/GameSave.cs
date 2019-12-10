@@ -7,6 +7,7 @@ using Yumemonogatari.Items;
 namespace Yumemonogatari {
     [Serializable]
     public class GameSave {
+        public int number;
         public DateTime time;
         public SettingsManager settings;
         public string currentScene;
@@ -21,6 +22,16 @@ namespace Yumemonogatari {
             using(var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None)) {
                 formatter.Serialize(stream, this);
             }
+        }
+
+        public static GameSave Deserialize(string path) {
+            var formatter = new BinaryFormatter();
+            using(var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                return (GameSave)formatter.Deserialize(stream);
+        }
+
+        public void Load() {
+            
         }
     }
 }

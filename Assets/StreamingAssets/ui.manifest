@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4197344445
+CRC: 2012458816
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 15883a2f72f173dbd18c22f773b6a934
+    Hash: 55d0466efc44cd6e94d604b202a41708
   TypeTreeHash:
     serializedVersion: 2
-    Hash: bd3f657d06af45c6dd67ab5e193fcfa6
+    Hash: a76aa4acf511951d6cbe401db5860369
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -33,6 +33,8 @@ ClassTypes:
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -2061169968, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -61,6 +63,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 896d04dd998a441aa6bb5a4f815a63d8, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5d9aedcf47ec43719d14f697ee2ec66d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d5a7e7f1bcf1418389d7bc24af949688, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f70201c3fdbf4668a511832f942a0d16, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -76,12 +82,14 @@ ClassTypes:
 - Class: 225
   Script: {instanceID: 0}
 Assets:
+- Assets/Prefabs/Save Item.prefab
 - Assets/Tiles/weapon_frame.png
 - Assets/Tiles/border-blue.png
 - Assets/Prefabs/Store Menu.prefab
 - Assets/Prefabs/HUDCanvas.prefab
 - Assets/Prefabs/GameManager.prefab
 - Assets/Tiles/border-select.png
+- Assets/Prefabs/Load Menu.prefab
 - Assets/Images/Icons/equipped.png
 Dependencies:
 - /Users/maclm01/Yumemonogatari/Assets/StreamingAssets/spawns
