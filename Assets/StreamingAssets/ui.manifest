@@ -1,15 +1,17 @@
 ManifestFileVersion: 0
-CRC: 633048853
+CRC: 4197344445
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e37e2379d3aced041580a38243941de0
+    Hash: 15883a2f72f173dbd18c22f773b6a934
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e02971bd2941e2dd79de19d5d398e142
+    Hash: bd3f657d06af45c6dd67ab5e193fcfa6
 HashAppended: 0
 ClassTypes:
 - Class: 1
+  Script: {instanceID: 0}
+- Class: 4
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -17,6 +19,10 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: cfdddc202a9541a6a2e55fb188bc5a8d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3dffdda17882f4025a0c96616cce1930, type: 3}
 - Class: 114
   Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -30,9 +36,31 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
   Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 90567aa2773a47b0a0e64addda90b099, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e8c4df3553164daa9cb84be1c275bd4a, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 017381e54d244e129d4e8d0b716b2774, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ca823d7a95f4a4cb7e413fa528eafb8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c86bf1a883698486395ed641a8d97bde, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 975d4739a486400c822ad3201d781bbd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a740fa39e83a74a088069d971f338156, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1fdc553a016c4417e95401ec457b2812, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 896d04dd998a441aa6bb5a4f815a63d8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5d9aedcf47ec43719d14f697ee2ec66d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -45,11 +73,15 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
 Assets:
 - Assets/Tiles/weapon_frame.png
 - Assets/Tiles/border-blue.png
 - Assets/Prefabs/Store Menu.prefab
+- Assets/Prefabs/HUDCanvas.prefab
+- Assets/Prefabs/GameManager.prefab
 - Assets/Tiles/border-select.png
 - Assets/Images/Icons/equipped.png
 Dependencies:
-- /Users/maclm01/Yumemonogatari/Assets/Bundles/spawns
+- /Users/maclm01/Yumemonogatari/Assets/StreamingAssets/spawns

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yumemonogatari.Entities;
 using Yumemonogatari.Interactions;
+using Yumemonogatari.UI;
 
 namespace Yumemonogatari {
     public class GameManager : MonoBehaviour {
@@ -29,6 +30,10 @@ namespace Yumemonogatari {
             InputManager = gameObject.AddComponent<InputManager>();
             InteractionManager = gameObject.AddComponent<InteractionManager>();
             SceneManager.activeSceneChanged += OnSceneChanged;
+        }
+
+        private void Start() {
+            hud = FindObjectOfType<HudController>()?.gameObject;
         }
 
         private void Update() {

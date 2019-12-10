@@ -1,18 +1,49 @@
 ManifestFileVersion: 0
-CRC: 2430668079
+CRC: 3319261753
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 62df87dc3fa119b25177dc69c64cf1ca
+    Hash: 1674e8fc09cfbff52455c195dfa3aaeb
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+    Hash: 1b1e9b6654840f06ca3b8643a07b655c
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 57191d88a8acd4b87972616071637f97, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 221
+  Script: {instanceID: 0}
 Assets:
 - Assets/Images/Icons/shield-recharge.png
+- Assets/Prefabs/Player.prefab
 Dependencies: []

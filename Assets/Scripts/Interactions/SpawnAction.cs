@@ -15,6 +15,7 @@ namespace Yumemonogatari.Interactions {
         public string identifier;
         
         public override void Perform() {
+            
             var obj = AssetBundles.Spawns.LoadAsset<GameObject>(identifier);
             Object.Instantiate(obj);
             obj.transform.position = location;

@@ -9,6 +9,9 @@ namespace Yumemonogatari.UI {
     
         private void Awake() {
             _slider = gameObject.GetComponentInChildren<Slider>();
+        }
+
+        private void Start() {
             if(character is null)
                 character = FindObjectOfType<PlayerCharacter>();
         }

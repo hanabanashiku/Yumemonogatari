@@ -25,7 +25,7 @@ namespace Yumemonogatari {
         public static AssetBundle Ui {
             get {
                 FetchBundle("ui", ref _ui);
-                return _items;
+                return _ui;
             }
         }
 
