@@ -115,7 +115,8 @@ namespace Yumemonogatari.UI {
     
         // display the item as selected and save the reference
         private void SelectItem(ItemDisplayController idc) {
-            _selected.Deselect();
+            if(!Equals(_selected, null))
+                _selected.Deselect();
     
             if(idc is null) {
                 ResetItemData();
@@ -235,19 +236,18 @@ namespace Yumemonogatari.UI {
         protected void Populate() {
             _gridItems = Lists[_currentPage];
             foreach(var i in _gridItems) {
-                i.transform.SetParent(grid);
                 i.gameObject.SetActive(true);
             }
         }
     
         // instantiate and load an item icon
         protected ItemDisplayController LoadItem(Item item, int quantity = 1) {
-            var obj = new GameObject();
+            var obj = new GameObject(item.name);
             var idc = obj.AddComponent<ItemDisplayController>();
             idc.item = item;
             idc.SetQuantity(quantity);
             obj.SetActive(false);
-            obj.transform.SetParent(grid);
+            obj.transform.SetParent(grid, false);
             return idc;
         }
     

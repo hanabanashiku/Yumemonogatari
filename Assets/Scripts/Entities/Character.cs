@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using Yumemonogatari.Items;
 
@@ -77,15 +75,16 @@ namespace Yumemonogatari.Entities {
         protected virtual void Awake() {
             Animator = gameObject.GetComponent<Animator>();
             Body = gameObject.GetComponent<Rigidbody2D>();
-            Melee = gameObject.GetComponent<MeleeHitboxController>();
+            Melee = gameObject.GetComponentInChildren<MeleeHitboxController>(true);
+            Debug.Assert(Melee != null);
 
             if(inventory is null)
                 inventory = gameObject.AddComponent<Inventory>();
 
             if(ArrowProjectile == null)
-                AssetBundles.Item.LoadAsset<GameObject>("Projectile_Arrow");
+                ArrowProjectile = AssetBundles.Item.LoadAsset<GameObject>("Projectile_Arrow");
             if(BulletProjectile == null)
-                AssetBundles.Item.LoadAsset<GameObject>("Projectile_Bullet");
+                BulletProjectile = AssetBundles.Item.LoadAsset<GameObject>("Projectile_Bullet");
         }
 
         /// <summary>
@@ -98,9 +97,6 @@ namespace Yumemonogatari.Entities {
             var speed = sprint ? RunSpeed : WalkSpeed;
             // changing direction
             if(d != Direction) {
-                // Stop attacking if changing direction
-                if(Melee != null && Melee.IsActive)
-                    Melee.Interrupt();
 
                 if(d == Vector2.left) {
                     Animator.SetInteger(DirectionParam, 2);
@@ -235,12 +231,12 @@ namespace Yumemonogatari.Entities {
 
         // Look for attacks
         public void OnTriggerEnter2D(Collider2D c) {
-            var melee = c.gameObject.GetComponent<MeleeHitboxController>();
+            var meleeController = c.gameObject.GetComponent<MeleeHitboxController>();
             var proj = c.gameObject.GetComponent<Projectile>();
 
             // hit with a melee weapon.
-            if(melee != null) {
-                TakeDamage(melee.Weapon.damage);
+            if(meleeController != null) {
+                TakeDamage(meleeController.Weapon.damage);
             }
 
             // hit with a projectile

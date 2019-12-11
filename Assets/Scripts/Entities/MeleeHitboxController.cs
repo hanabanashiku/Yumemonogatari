@@ -22,8 +22,7 @@ namespace Yumemonogatari.Entities {
         private void Awake() {
             _character = gameObject.transform.parent.GetComponent<Character>();
             _renderer = gameObject.GetComponent<SpriteRenderer>();
-            if(_character is null)
-                Debug.LogWarning("Null character object");
+            Debug.Assert(_character != null);
         }
 
         // If we've entered a collision, stop animating, reset rotation, and deactivate.
@@ -36,7 +35,7 @@ namespace Yumemonogatari.Entities {
         /// </summary>
         public void Activate() {
             gameObject.SetActive(true);
-            _anim = StartCoroutine(StartAnimation());
+            _anim = StartAnimation();
         }
 
         /// <summary>
@@ -58,57 +57,60 @@ namespace Yumemonogatari.Entities {
 
         // display and swing the sword
         // todo range variances with the box collider..
-        private IEnumerator StartAnimation() {
+        private Coroutine StartAnimation() {
             var dir = _character.Direction;
             var t = gameObject.transform;
             var scale = t.localScale;
+            Quaternion from;
             Quaternion target; // the Euler z-rotation that we are aiming for.
 
             // Make two-handed weapons wider.
             if(Weapon.type == MeleeWeapon.Types.TwoHanded)
                 scale.x = 1;
+            else
+                scale.x = 0.8f;
 
             if(dir == Vector2.up) {
                 _renderer.sortingOrder = Character.SortOrder - 1;
-                t.rotation = Quaternion.Euler(0, 0, 30);
+                from = Quaternion.Euler(0, 0, 30f);
                 target = Quaternion.Euler(0f, 0f, -30f);
+                scale.y = 1;
             }
             else if(dir == Vector2.down) {
                 _renderer.sortingOrder = Character.SortOrder + 1;
                 t.localScale = new Vector3(1, -1, 1);
-                t.rotation = Quaternion.Euler(0, 0, -30);
+                from = Quaternion.Euler(0, 0, -30);
                 target = Quaternion.Euler(0, 0, 30f);
                 scale.y *= -1; // facing down, so flip it.
             }
             else if(dir == Vector2.left) {
                 _renderer.sortingOrder = Character.SortOrder - 1;
-                t.rotation = Quaternion.Euler(Vector3.zero);
+                from = Quaternion.Euler(Vector3.zero);
                 target = Quaternion.Euler(0, 0, 90f);
-
+                scale.y = 1;
             }
             else if(dir == Vector2.right) {
                 _renderer.sortingOrder = Character.SortOrder + 1;
-                t.rotation = Quaternion.Euler(Vector3.zero);
+                from = Quaternion.Euler(Vector3.zero);
                 target = Quaternion.Euler(0, 0, -90f);
-
+                scale.y = 1;
             }
             else {
                 Debug.LogWarning($"Unexpected character direction {dir}");
-                yield break;
+                return null;
             }
 
-            // set the scale
-            t.localScale = scale;
-
-            var speed = (target.z - t.rotation.z) / Weapon.swingTime;
-
-            while(t.rotation != target) {
-                var step = speed * Time.deltaTime;
-                t.rotation = Quaternion.RotateTowards(t.rotation, target, step);
-                yield return new WaitForFixedUpdate();
+            return StartCoroutine(Rotate(from, target, Weapon.swingTime));
+        }
+        
+        private IEnumerator Rotate(Quaternion from, Quaternion to, float duration){ 
+            var elapsed = 0.0f;
+            while( elapsed < duration ) {
+                transform.rotation = Quaternion.Slerp(from, to, elapsed / duration );
+                elapsed += Time.deltaTime;
+                yield return null;
             }
-
-            // hide and reset the sword.
+            transform.rotation = to;
             Interrupt();
         }
     }

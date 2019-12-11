@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3319261753
+CRC: 3952567563
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1674e8fc09cfbff52455c195dfa3aaeb
+    Hash: 07f2af0cc243fbf95eaf5362e7023b36
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1b1e9b6654840f06ca3b8643a07b655c
+    Hash: c29c2711a51a2538a01d5f91a4cf599d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,6 +35,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 57191d88a8acd4b87972616071637f97, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e3e7d06af37a41c1a835a0ef3800329e, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -45,5 +47,6 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Images/Icons/shield-recharge.png
+- Assets/Prefabs/MeleeHitbox.prefab
 - Assets/Prefabs/Player.prefab
 Dependencies: []

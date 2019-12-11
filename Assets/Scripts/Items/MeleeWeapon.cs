@@ -20,7 +20,7 @@ namespace Yumemonogatari.Items {
         /// <summary>
         /// The time it takes to attack with the weapon.
         /// </summary>
-        public int swingTime;
+        public float swingTime;
     }
 }
 

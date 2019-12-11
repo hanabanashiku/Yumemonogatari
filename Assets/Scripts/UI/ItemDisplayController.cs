@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ namespace Yumemonogatari.UI {
         public SpriteRenderer border;
         public Text quantityDisplay;
         public SpriteRenderer itemImage;
-        public SpriteRenderer equippedIcon;
+        public Image equippedIcon;
     
         private static Sprite _borderNormal;
         private static Sprite _borderSelected; 
@@ -28,7 +27,7 @@ namespace Yumemonogatari.UI {
             border = gameObject.AddComponent<SpriteRenderer>();
             Deselect(); // set the border image as normal
             border.drawMode = SpriteDrawMode.Simple;
-            border.sortingOrder = 1;
+            border.sortingOrder = 50;
             
             var obj = new GameObject("Quantity Display");
             obj.transform.localPosition = new Vector2(15f, -10f);
@@ -65,9 +64,9 @@ namespace Yumemonogatari.UI {
             var t = obj.transform;
             t.localScale = new Vector2(0.5f, 0.5f);
             t.localPosition = new Vector2(-15f, 15f);
-            equippedIcon = obj.AddComponent<SpriteRenderer>();
+            equippedIcon = obj.AddComponent<Image>();
             equippedIcon.sprite = _equippedStar;
-            equippedIcon.sortingOrder = -1;
+            //equippedIcon.sortingOrder = -1;
         }
     
         /// <summary>

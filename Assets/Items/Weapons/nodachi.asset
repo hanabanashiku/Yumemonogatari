@@ -26,3 +26,4 @@ MonoBehaviour:
   range: 0
   time: 2
   type: 1
+  swingTime: 0.5

@@ -199,7 +199,9 @@ namespace Yumemonogatari.Items {
                 Debug.LogWarning("Adding null item to inventory.");
                 return;
             }
-
+            
+            if(!items.ContainsKey(item))
+                items.Add(item, 0);
             items[item] += 1;
         }
 
@@ -207,6 +209,8 @@ namespace Yumemonogatari.Items {
             if(quantity < 0)
                 throw new ArgumentOutOfRangeException(nameof(quantity));
 
+            if(!items.ContainsKey(item))
+                items.Add(item, 0);
             items[item] += quantity;
         }
 

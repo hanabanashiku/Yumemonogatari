@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 701907000666482667}
   - component: {fileID: 8532718667350009280}
   - component: {fileID: 792928999784618125}
+  - component: {fileID: 114395270804812728}
   m_Layer: 0
   m_Name: MeleeHitbox
   m_TagString: Untagged
@@ -106,3 +107,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09224892, y: 0.2742195}
   m_EdgeRadius: 0
+--- !u!114 &114395270804812728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424791440289567645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e7d06af37a41c1a835a0ef3800329e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
