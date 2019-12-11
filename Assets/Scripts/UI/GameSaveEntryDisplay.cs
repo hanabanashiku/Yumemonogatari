@@ -12,7 +12,7 @@ namespace Yumemonogatari.UI {
         public Text time;
         public Image border;
 
-        public GameSave Save {
+        public virtual GameSave Save {
             get => _save;
             set {
                 _save = value;
@@ -22,7 +22,7 @@ namespace Yumemonogatari.UI {
             }
         }
 
-        private void Awake() {
+        protected void Awake() {
             if(_border is null)
                 _border = AssetBundles.Ui.LoadAsset<Sprite>("border-blue");
             if(_selected is null)

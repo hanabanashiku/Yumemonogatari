@@ -15,5 +15,10 @@ namespace Yumemonogatari.UI {
             var prefab = AssetBundles.Ui.LoadAsset<GameObject>("Quit Message");
             Instantiate(prefab);
         }
+
+        public void TriggerSave() {
+            var prefab = AssetBundles.Ui.LoadAsset<GameObject>("Save Menu");
+            Instantiate(prefab);
+        }
     }
 }

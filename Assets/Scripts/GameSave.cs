@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -17,11 +18,18 @@ namespace Yumemonogatari {
     public class GameSave {
         public int number;
         public DateTime time;
-        public SettingsManager settings;
+        public SettingsManager.TextSpeeds textSpeed;
         public string currentScene;
         public int currentLevel;
         public Vector2 currentPosition;
-        public Inventory inventory;
+        public Dictionary<Item, int> items;
+        public int mon;
+        public int bullets;
+        public int arrows;
+        public int remainingAmmo;
+        public MeleeWeapon equippedMelee;
+        public RangedWeapon equippedRanged;
+        public Armor equippedArmor;
         public int health;
         public int shield;
 
@@ -56,12 +64,24 @@ namespace Yumemonogatari {
                 GameManager.SetUpScene();
             
             InteractionManager.Instance.LoadLevel(currentLevel);
-            SettingsManager.Instance = settings;
+            var settings = SettingsManager.Instance;
+            settings.textSpeed = textSpeed;
 
             var character = Object.FindObjectOfType<PlayerCharacter>();
             Debug.Assert(character != null);
             character.transform.position = currentPosition;
+            
+            var inventory = character.gameObject.AddComponent<Inventory>();
             character.inventory = inventory;
+            inventory.items = items;
+            inventory.mon = mon;
+            inventory.bullets = bullets;
+            inventory.arrows = arrows;
+            inventory.EquipWeapon(equippedMelee);
+            inventory.EquipWeapon(equippedRanged);
+            inventory.EquipArmor(equippedArmor);
+            inventory.remainingAmmo = remainingAmmo;
+            
             character.health = health;
             character.shield = shield;
 

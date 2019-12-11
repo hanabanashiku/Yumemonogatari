@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1330196647
+CRC: 872081306
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c45c66cbe6ef9361e3b8125ef7b402b4
+    Hash: 70baee843fa2b9d9f8fe80bac39810c4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 31a3f086f482bca690a7c27ca3c84aae
+    Hash: 31208bde692eea3e68fce6a108c6da2d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -79,6 +79,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: ce46e1050ee34ebdbd2e2014d4459e12, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1a58f7d66f73474bb45a6455b839c802, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 70439b978b67422d8a4030a182fb427f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9fbb7550f2c741bf89f705e596e163a8, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -94,6 +98,7 @@ ClassTypes:
 - Class: 225
   Script: {instanceID: 0}
 Assets:
+- Assets/Prefabs/Save Menu.prefab
 - Assets/Prefabs/Save Item.prefab
 - Assets/Tiles/weapon_frame.png
 - Assets/Tiles/border-blue.png

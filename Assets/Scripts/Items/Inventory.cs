@@ -8,6 +8,7 @@ namespace Yumemonogatari.Items {
     /// <summary>
     /// The player's inventory and equipped items.
     /// </summary>
+    [Serializable]
     public class Inventory : MonoBehaviour, ICollection<Item>, IEnumerable<Tuple<Item, int>> {
         /// <summary>
         /// The player's items, and the quantity.

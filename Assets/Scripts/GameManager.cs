@@ -76,14 +76,23 @@ namespace Yumemonogatari {
             }
             var path = Path.Combine(Application.persistentDataPath, $"{save}.sav");
             var player = FindObjectOfType<PlayerCharacter>();
+            var inventory = player.inventory;
+            var settings = SettingsManager.Instance;
 
             var gameSave = new GameSave() {
+                number = save,
                 time = DateTime.Now,
-                settings = SettingsManager.Instance,
+                textSpeed = settings.textSpeed,
                 currentScene = SceneManager.GetActiveScene().name,
                 currentLevel = InteractionManager.CurrentLevel.number,
                 currentPosition = player.gameObject.transform.position,
-                inventory = player.inventory,
+                items = inventory.items,
+                arrows = inventory.arrows,
+                bullets = inventory.bullets,
+                remainingAmmo = inventory.remainingAmmo,
+                equippedArmor = inventory.EquippedArmor,
+                equippedMelee = inventory.EquippedMeleeWeapon,
+                equippedRanged = inventory.EquippedRangedWeapon,
                 health = player.health,
                 shield = player.shield
             };

@@ -13,7 +13,7 @@ namespace Yumemonogatari.UI {
         private GameObject _entryPrefab;
         private GameObject _previousSelection;
 
-        protected void Awake() {
+        protected virtual void Awake() {
             _entryPrefab = AssetBundles.Ui.LoadAsset<GameObject>("Save Item");
             Displays = new List<GameSaveEntryDisplay>();
             _previousSelection = EventSystem.current.currentSelectedGameObject;
