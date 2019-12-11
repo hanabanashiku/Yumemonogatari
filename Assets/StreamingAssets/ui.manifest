@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 391197241
+CRC: 1330196647
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c727786889182dfaf8e31e93f7d52087
+    Hash: c45c66cbe6ef9361e3b8125ef7b402b4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1fa51a35e19e30ac7f08933f5bdd2635
+    Hash: 31a3f086f482bca690a7c27ca3c84aae
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,9 +24,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 3dffdda17882f4025a0c96616cce1930, type: 3}
 - Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
   Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -44,9 +48,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
   Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: d5a7e7f1bcf1418389d7bc24af949688, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 90567aa2773a47b0a0e64addda90b099, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f70201c3fdbf4668a511832f942a0d16, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e8c4df3553164daa9cb84be1c275bd4a, type: 3}
 - Class: 114
@@ -66,9 +76,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 5d9aedcf47ec43719d14f697ee2ec66d, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: d5a7e7f1bcf1418389d7bc24af949688, type: 3}
+  Script: {fileID: 11500000, guid: ce46e1050ee34ebdbd2e2014d4459e12, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: f70201c3fdbf4668a511832f942a0d16, type: 3}
+  Script: {fileID: 11500000, guid: 1a58f7d66f73474bb45a6455b839c802, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -89,6 +99,7 @@ Assets:
 - Assets/Tiles/border-blue.png
 - Assets/Prefabs/Store Menu.prefab
 - Assets/Prefabs/HUDCanvas.prefab
+- Assets/Prefabs/Quit Message.prefab
 - Assets/Prefabs/GameManager.prefab
 - Assets/Tiles/border-select.png
 - Assets/Prefabs/Load Menu.prefab
