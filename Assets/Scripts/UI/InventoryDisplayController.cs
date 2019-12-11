@@ -237,6 +237,8 @@ namespace Yumemonogatari.UI {
             _gridItems = Lists[_currentPage];
             foreach(var i in _gridItems) {
                 i.gameObject.SetActive(true);
+                i.transform.SetParent(grid, false);
+
             }
         }
     
@@ -247,7 +249,6 @@ namespace Yumemonogatari.UI {
             idc.item = item;
             idc.SetQuantity(quantity);
             obj.SetActive(false);
-            obj.transform.SetParent(grid, false);
             return idc;
         }
     

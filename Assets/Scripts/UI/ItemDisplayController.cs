@@ -35,6 +35,7 @@ namespace Yumemonogatari.UI {
             quantityDisplay.fontSize = 18;
             quantityDisplay.color = Color.white;
             quantityDisplay.text = "0";
+            transform.localScale = new Vector3(50, 50, 1);
         }
     
         private void Start() {
@@ -42,7 +43,7 @@ namespace Yumemonogatari.UI {
             var obj = new GameObject("Item Image");
             itemImage = obj.AddComponent<SpriteRenderer>();
             itemImage.sprite = item.sprite;
-            obj.transform.SetParent(transform);
+            obj.transform.SetParent(transform, false);
         }
     
         public void Select() {
