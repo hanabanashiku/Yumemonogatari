@@ -35,6 +35,13 @@ namespace Yumemonogatari.Interactions {
                 Debug.LogWarning("Action queue is empty.");
                 return;
             }
+
+            if(_actionQueue != null) {
+                Debug.LogWarning("The script is already running");
+                return;
+            }
+            
+            _actionQueue = new Queue<ScriptedAction>(actions);
             Next();
         }
 
@@ -45,7 +52,7 @@ namespace Yumemonogatari.Interactions {
         /// Perform the next action.
         /// </summary>
         public void Next() {
-            if(_actionQueue is null)
+            if(!HasNext())
                 throw new InvalidOperationException();
             var action = _actionQueue.Dequeue();
             action.Perform();

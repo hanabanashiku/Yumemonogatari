@@ -4,16 +4,7 @@ using UnityEngine;
 namespace Yumemonogatari {
     [Serializable]
     public class SettingsManager : MonoBehaviour {
-        private static SettingsManager _instance;
-
-        public static SettingsManager Instance {
-            get {
-                if(_instance is null)
-                    _instance = GameManager.Instance.gameObject.AddComponent<SettingsManager>();
-                return _instance;
-            }
-            private set => _instance = value;
-        }
+        public static SettingsManager Instance;
 
         public enum TextSpeeds {
             /// <summary>3 cps</summary>
@@ -21,14 +12,20 @@ namespace Yumemonogatari {
             /// <summary>5 cps</summary>
             Medium = 5, 
             /// <summary>7 cps</summary>
-            Fast = 7
+            Fast = 7,
+            /// <summary>
+            /// Infinite cps
+            /// </summary>
+            Immediate = 0
         }
 
-        public TextSpeeds textSpeed;
+        public TextSpeeds textSpeed = TextSpeeds.Immediate;
 
         private void Awake() {
             if(Instance == null)
                 Instance = this;
+            
+            
         }
     }
 }

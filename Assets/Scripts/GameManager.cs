@@ -29,6 +29,7 @@ namespace Yumemonogatari {
             Instance = this;
             InputManager = gameObject.AddComponent<InputManager>();
             InteractionManager = gameObject.AddComponent<InteractionManager>();
+            gameObject.AddComponent<SettingsManager>();
             SceneManager.activeSceneChanged += OnSceneChanged;
         }
 

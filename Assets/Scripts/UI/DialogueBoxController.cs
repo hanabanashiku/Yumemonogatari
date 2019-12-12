@@ -9,6 +9,8 @@ namespace Yumemonogatari.UI {
     /// The controller for the UI dialogue box.
     /// </summary>
     public class DialogueBoxController : MonoBehaviour {
+        public static DialogueBoxController Instance;
+        
         public Text speaker;
         public Text dialogue;
 
@@ -20,8 +22,12 @@ namespace Yumemonogatari.UI {
 
         private event InteractionManager.OnActionCompleted ActionCompleted;
 
-        private void Start() {
+        private void Awake() {
             ActionCompleted += InteractionManager.Instance.ActionCompleted;
+        }
+
+        public DialogueBoxController() {
+            Instance = this;
         }
         
         private void OnEnable() {
@@ -33,8 +39,10 @@ namespace Yumemonogatari.UI {
         }
 
         private void Update() {
-            if(_waitingForInput && Input.GetButtonUp("Submit")) 
-                Complete();
+            if(_waitingForInput && Input.GetButtonUp("Submit")) {
+                Debug.Log("Submit");
+                _waitingForInput = false;
+            }
         }
 
         /// <summary>
@@ -53,17 +61,25 @@ namespace Yumemonogatari.UI {
 
         private IEnumerator PrintTextAsync(string text, bool input) {
             var delay = 1f / (int)SettingsManager.Instance.textSpeed;
-            
-            foreach(var c in text) {
-                dialogue.text += c;
-                if(!char.IsWhiteSpace(c))
-                    yield return new WaitForSeconds(delay);
+
+            // text speed is 0 (fast)
+            if(float.IsInfinity(delay)) {
+                dialogue.text = text;
+            }
+            else {
+                foreach(var c in text) {
+                    dialogue.text += c;
+                    if(!char.IsWhiteSpace(c))
+                        yield return new WaitForSeconds(delay);
+                }
             }
 
             if(input)
                 _waitingForInput = true;
-            else 
-                Complete();
+
+            yield return new WaitWhile(() => _waitingForInput);
+            
+            Complete();
         }
 
         private void Complete() {

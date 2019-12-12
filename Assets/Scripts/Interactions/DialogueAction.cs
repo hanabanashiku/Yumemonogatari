@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Yumemonogatari.UI;
 
 namespace Yumemonogatari.Interactions {
     /// <summary>
@@ -36,6 +37,8 @@ namespace Yumemonogatari.Interactions {
         public bool waitForInput;
         
         public override void Perform() {
+            Debug.Assert(DialogueBoxController.Instance != null);
+            Debug.Log("Performing");
             string speaker;
             if(string.IsNullOrEmpty(identifier))
                 speaker = speakerName;
@@ -47,7 +50,7 @@ namespace Yumemonogatari.Interactions {
                 }
                 else speaker = npc.characterName;
             }
-            InteractionManager.Instance.DialogueBox.UpdateDialogue(speaker, this);
+            DialogueBoxController.Instance.UpdateDialogue(speaker, this);
         }
 
         public static implicit operator string(DialogueAction a) {
