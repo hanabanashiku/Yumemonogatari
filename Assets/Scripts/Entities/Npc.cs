@@ -37,8 +37,9 @@ namespace Yumemonogatari.Entities {
             // delete the character
             Destroy(gameObject);
         }
-
+        
         public virtual void Interact() {
+            Debug.Log("Interacting");
             if(hostile)
                 return;
             InteractionManager.Instance.ObjectActivated(identifier);

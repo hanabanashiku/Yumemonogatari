@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using UnityEngine;
 
 namespace Yumemonogatari.Interactions {
     /// <summary>
@@ -10,9 +12,17 @@ namespace Yumemonogatari.Interactions {
         /// <summary>
         /// The trigger to start the interaction.
         /// </summary>
+        [XmlElement("onActivateTrigger", typeof(OnActivateTrigger))]
+        [XmlElement("onNpcDeathTrigger", typeof(OnNpcDeathTrigger))]
+        [XmlElement("onPlayerEnterTrigger", typeof(OnPlayerEnterTrigger))]
+        [XmlElement("onSceneLoadedTrigger", typeof(OnSceneLoadedTrigger))]
         public Trigger trigger;
 
         // the list of actions
+        [XmlArray("actions")]
+        [XmlArrayItem("dialogueAction", typeof(DialogueAction))]
+        [XmlArrayItem("movementAction", typeof(MovementAction))]
+        [XmlArrayItem("spawnAction", typeof(SpawnAction))]
         public List<ScriptedAction> actions;
 
         private Queue<ScriptedAction> _actionQueue;
@@ -21,7 +31,10 @@ namespace Yumemonogatari.Interactions {
         /// Start running the script
         /// </summary>
         public void Start() {
-            _actionQueue = new Queue<ScriptedAction>(actions);
+            if(actions.Count == 0) {
+                Debug.LogWarning("Action queue is empty.");
+                return;
+            }
             Next();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Yumemonogatari.Interactions;
 using Yumemonogatari.Items;
 
 namespace Yumemonogatari.Entities {
@@ -53,6 +54,19 @@ namespace Yumemonogatari.Entities {
                 RangedAttack(target);
             }
 
+        }
+
+        // interact when triggering an interaction
+        private void OnTriggerStay2D(Collider2D c) {
+            if(Input.GetButtonUp("Submit")) {
+                var trigger = c.gameObject.GetComponent<IInteractable>();
+                if(trigger == null) {
+                    Debug.Log("Nothing to activate");
+                    return;
+                }
+                trigger.Interact();
+            }
+            
         }
 
         // Get the current direction based on input axis

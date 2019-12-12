@@ -1,7 +1,30 @@
 <Level
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   number="1">
-  <actions>
-  </actions>
+  <scripts>
+    <script>
+      <onActivateTrigger>
+        <Identifier>black_cat</Identifier>
+      </onActivateTrigger>
+      <actions>
+        <dialogueAction>
+          <identifier>black_cat</identifier>
+          <dialogue>Hello.</dialogue>
+          <fontDisplay>
+            <fontSize>14</fontSize>
+            <fontStyle>Normal</fontStyle>
+          </fontDisplay>
+          <waitForInput>true</waitForInput>
+        </dialogueAction>
+        <dialogueAction>
+          <identifier>black_cat</identifier>
+          <dialogue>It's me, the cat.</dialogue>
+          <fontDisplay>
+            <fontSize>14</fontSize>
+            <fontStyle>Normal</fontStyle>
+          </fontDisplay>
+          <waitForInput>true</waitForInput>
+        </dialogueAction>
+      </actions>
+    </script>
+  </scripts>
 </Level>

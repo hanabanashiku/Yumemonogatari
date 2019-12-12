@@ -85,6 +85,7 @@ namespace Yumemonogatari.Entities {
                 ArrowProjectile = AssetBundles.Item.LoadAsset<GameObject>("Projectile_Arrow");
             if(BulletProjectile == null)
                 BulletProjectile = AssetBundles.Item.LoadAsset<GameObject>("Projectile_Bullet");
+
         }
 
         /// <summary>

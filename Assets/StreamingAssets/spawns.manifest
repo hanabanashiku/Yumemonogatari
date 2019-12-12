@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1634822152
+CRC: 1578757731
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 07f2af0cc243fbf95eaf5362e7023b36
+    Hash: b78897de1d68f0cbe78e4d8bbe4d4d9a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4831c2bf88a88b36e361bcb06b1ee02f
+    Hash: 2b1e3e36a5b05046e2b4c039250b496f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -37,6 +37,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 57191d88a8acd4b87972616071637f97, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e3e7d06af37a41c1a835a0ef3800329e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3970701fe55341678820a75512d0a132, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -46,7 +48,9 @@ ClassTypes:
 - Class: 221
   Script: {instanceID: 0}
 Assets:
+- Assets/Prefabs/black_cat.prefab
 - Assets/Images/Icons/shield-recharge.png
 - Assets/Prefabs/MeleeHitbox.prefab
 - Assets/Prefabs/Player.prefab
+- Assets/Prefabs/dummy.prefab
 Dependencies: []

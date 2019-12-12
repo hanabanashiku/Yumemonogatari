@@ -11,8 +11,8 @@ namespace Yumemonogatari.Interactions {
         [XmlAttribute("number")]
         public int number;
 
-        [XmlArray("actions")]
-        [XmlArrayItem("action")]
+        [XmlArray("scripts")]
+        [XmlArrayItem("script")]
         public List<InteractionScript> scripts;
 
         private bool? _playerEnterTriggers;
