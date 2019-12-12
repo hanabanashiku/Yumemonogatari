@@ -58,7 +58,7 @@ namespace Yumemonogatari.Entities {
         // display and swing the sword
         // todo range variances with the box collider..
         private Coroutine StartAnimation() {
-            var dir = _character.Direction;
+            var dir = _character.direction;
             var t = gameObject.transform;
             var scale = t.localScale;
             Quaternion from;

@@ -38,12 +38,12 @@ namespace Yumemonogatari.Entities {
                     target = _camera.ScreenToWorldPoint(Input.mousePosition);
                 else {
                     // controller input
-                    target = Direction;
+                    target = direction;
                     var h = Input.GetAxis("Horizontal Aim");
                     var v = Input.GetAxis("Vertical Aim");
 
 
-                    if(v > 0 || Direction == Vector2.down) {
+                    if(v > 0 || direction == Vector2.down) {
                         target = Quaternion.AngleAxis(h * 90, Vector3.forward) * target;
                     }
 

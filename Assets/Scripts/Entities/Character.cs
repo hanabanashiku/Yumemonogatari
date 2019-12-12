@@ -27,7 +27,7 @@ namespace Yumemonogatari.Entities {
         /// <summary>
         /// The direction that the character is currently facing.
         /// </summary>
-        public Vector2 Direction { get; protected set; } = Vector2.up;
+        public Vector2 direction = Vector2.up;
 
         /// <summary>
         /// The name of the character.
@@ -96,29 +96,29 @@ namespace Yumemonogatari.Entities {
         public void Move(Vector2 d, bool sprint = false) {
             var speed = sprint ? RunSpeed : WalkSpeed;
             // changing direction
-            if(d != Direction) {
+            if(d != direction) {
 
                 if(d == Vector2.left) {
                     Animator.SetInteger(DirectionParam, 2);
                     Animator.SetFloat(SpeedParam,
                         speed); // rewrite so that these things don't happen in the same frame.
-                    Direction = d;
+                    direction = d;
                 }
                 else if(d == Vector2.right) {
                     Animator.SetInteger(DirectionParam, 0);
                     Animator.SetFloat(SpeedParam, speed);
-                    Direction = d;
+                    direction = d;
                 }
                 else if(d == Vector2.up) {
                     Animator.SetInteger(DirectionParam, 1);
                     Animator.SetFloat(SpeedParam, speed);
-                    Direction = d;
+                    direction = d;
                 }
 
                 else if(d == Vector2.down) {
                     Animator.SetInteger(DirectionParam, 3);
                     Animator.SetFloat(SpeedParam, speed);
-                    Direction = d;
+                    direction = d;
                 }
                 // don't update Direction
                 // we want to retain the way the character's facing, but use the value below to stop the character.
