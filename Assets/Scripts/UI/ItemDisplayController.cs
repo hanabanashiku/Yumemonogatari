@@ -7,9 +7,9 @@ namespace Yumemonogatari.UI {
     /// </summary>
     public class ItemDisplayController : MonoBehaviour {
         public Item item;
-        public SpriteRenderer border;
+        public Image border;
         public Text quantityDisplay;
-        public SpriteRenderer itemImage;
+        public Image itemImage;
         public Image equippedIcon;
     
         private static Sprite _borderNormal;
@@ -23,25 +23,26 @@ namespace Yumemonogatari.UI {
                 _borderSelected = AssetBundles.Ui.LoadAsset<Sprite>("border-select");
             if(_equippedStar is null)
                 _equippedStar = AssetBundles.Ui.LoadAsset<Sprite>("equipped");
-            
-            border = gameObject.AddComponent<SpriteRenderer>();
+
+            gameObject.AddComponent<RectTransform>();
+            gameObject.AddComponent<CanvasRenderer>();
+            border = gameObject.AddComponent<Image>();
             Deselect(); // set the border image as normal
-            border.drawMode = SpriteDrawMode.Simple;
-            border.sortingOrder = 50;
             
             var obj = new GameObject("Quantity Display");
-            obj.transform.localPosition = new Vector2(15f, -10f);
+            obj.transform.parent = transform;
+            obj.transform.localPosition = new Vector2(50f, -50f);
             quantityDisplay = obj.AddComponent<Text>();
             quantityDisplay.fontSize = 18;
             quantityDisplay.color = Color.white;
             quantityDisplay.text = "0";
-            transform.localScale = new Vector3(50, 50, 1);
+            transform.localScale = new Vector3(0.6f, 0.6f, 1);
         }
     
         private void Start() {
             // display the item image
             var obj = new GameObject("Item Image");
-            itemImage = obj.AddComponent<SpriteRenderer>();
+            itemImage = obj.AddComponent<Image>();
             itemImage.sprite = item.sprite;
             obj.transform.SetParent(transform, false);
         }
@@ -60,14 +61,14 @@ namespace Yumemonogatari.UI {
         public void Equip() {
             if(equippedIcon != null)
                 return;
-    
+                
             var obj = new GameObject("Equipped Icon");
             var t = obj.transform;
+            t.parent = transform;
             t.localScale = new Vector2(0.5f, 0.5f);
-            t.localPosition = new Vector2(-15f, 15f);
+            t.localPosition = new Vector3(-50f, 50f, 10f);
             equippedIcon = obj.AddComponent<Image>();
             equippedIcon.sprite = _equippedStar;
-            //equippedIcon.sortingOrder = -1;
         }
     
         /// <summary>
@@ -77,7 +78,8 @@ namespace Yumemonogatari.UI {
             if(equippedIcon is null)
                 return;
             
-            Destroy(equippedIcon);
+            Destroy(equippedIcon.gameObject);
+            equippedIcon = null;
         }
     
         public void SetQuantity(int q) {

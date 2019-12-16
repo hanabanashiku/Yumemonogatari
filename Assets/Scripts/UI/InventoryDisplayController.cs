@@ -249,6 +249,9 @@ namespace Yumemonogatari.UI {
             idc.item = item;
             idc.SetQuantity(quantity);
             obj.SetActive(false);
+            if(inventory.EquippedArmor == item || inventory.EquippedMeleeWeapon == item ||
+               inventory.EquippedRangedWeapon == item)
+                idc.Equip();
             return idc;
         }
     
@@ -283,8 +286,10 @@ namespace Yumemonogatari.UI {
             // otherwise, dequip the current item in the UI if applicable
             // and equip the new item in the inventory and the UI.
             if(item.GetType() == typeof(MeleeWeapon)) {
-                if(inventory.EquippedMeleeWeapon == item)
+                if(inventory.EquippedMeleeWeapon == item) {
                     inventory.EquipWeapon((MeleeWeapon)null);
+                    idc.Dequip();
+                }
                 else {
                     _gridItems.Find(x => x.item == inventory.EquippedMeleeWeapon)?.Dequip();
                     inventory.EquipWeapon((MeleeWeapon)item);
@@ -293,8 +298,10 @@ namespace Yumemonogatari.UI {
             }
             
             else if(item.GetType() == typeof(RangedWeapon)) {
-                if(inventory.EquippedRangedWeapon == item)
+                if(inventory.EquippedRangedWeapon == item) {
                     inventory.EquipWeapon((RangedWeapon)null);
+                    idc.Dequip();
+                }
                 else {
                     _gridItems.Find(x => x.item == inventory.EquippedRangedWeapon)?.Dequip();
                     inventory.EquipWeapon((RangedWeapon)item);
@@ -303,8 +310,10 @@ namespace Yumemonogatari.UI {
             }
             
             else if(item.GetType() == typeof(Armor)) {
-                if(inventory.EquippedArmor == item)
+                if(inventory.EquippedArmor == item) {
                     inventory.EquipArmor(null);
+                    idc.Dequip();
+                }
                 else {
                     _gridItems.Find(x => x.item == inventory.EquippedArmor)?.Dequip();
                     inventory.EquipArmor((Armor)item);
